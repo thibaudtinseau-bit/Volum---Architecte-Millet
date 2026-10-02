@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { COMMUNES, FAQ, SERVICES, SITE, STEPS } from "@/lib/content";
+import { ARGUMENTS, AUDIENCES, BUDGET_STEPS, COMMUNES, FAQ, SERVICES, SITE, STEPS } from "@/lib/content";
 import { getReviews } from "@/lib/reviews";
 import { ContactForm } from "./ContactForm";
 import { Arrow, GoogleIcon, Icon } from "./Icons";
@@ -63,8 +63,10 @@ export function Faq() {
     <section className="section" id="faq" aria-labelledby="faq-title">
       <div className="container intro-grid">
         <div className="reveal">
-          <span className="eyebrow">Questions fréquentes</span>
-          <h2 className="h2" id="faq-title" style={{ marginTop: 18 }}>Bon à <em className="accent">savoir</em>.</h2>
+          <span className="eyebrow">Avant de nous appeler</span>
+          <h2 className="h2" id="faq-title" style={{ marginTop: 18 }}>Les questions que <em className="accent">vous vous posez</em>.</h2>
+          <p className="muted" style={{ marginTop: 24, maxWidth: 420 }}>Budget, délais, artisans, imprévus : les réponses aux questions les plus fréquentes. Et si la vôtre n&apos;y est pas, posez-la directement.</p>
+          <a className="link-underline" href={`tel:${SITE.phoneLink}`} style={{ marginTop: 8 }}>{SITE.phone} <Arrow /></a>
         </div>
         <div className="faq reveal d1">
           {FAQ.map(([q, a]) => (
@@ -151,9 +153,10 @@ export function Cta() {
       <div className="cta-bg" aria-hidden="true"><ProjectImg slug="villa-vc" num="09" alt="" sizes="100vw" /></div>
       <div className="container">
         <span className="eyebrow">Votre projet</span>
-        <h2 className="display reveal">Et si l&apos;on dessinait <em className="accent">la maison du bonheur</em>&nbsp;?</h2>
+        <h2 className="display reveal">Un terrain, une maison à transformer, <em className="accent">un projet à étudier</em>&nbsp;?</h2>
+        <p className="lead reveal" style={{ maxWidth: 620, margin: 0 }}>Pas besoin d&apos;avoir tout défini : le premier rendez-vous sert à vérifier la faisabilité, les contraintes et l&apos;enveloppe à prévoir.</p>
         <div className="hero-actions reveal d1">
-          <Link className="btn btn--light" href="/contact">Prendre rendez-vous <Arrow /></Link>
+          <Link className="btn btn--light" href="/contact">Parlons de votre projet <Arrow /></Link>
           <a className="btn btn--ghost" href={`tel:${SITE.phoneLink}`}>{SITE.phone}</a>
         </div>
       </div>
@@ -171,7 +174,7 @@ export function ContactSection({ standalone = false }: { standalone?: boolean })
             <div>
               <span className="eyebrow">Contact</span>
               <Title className={standalone ? "display" : "h2"} id="contact-title" style={{ marginTop: 18 }}>Parlons de <em className="accent">votre projet</em>.</Title>
-              <p className="muted" style={{ marginTop: 24, maxWidth: 440 }}>Un terrain, une maison à agrandir, un bâtiment à rénover&nbsp;? Décrivez-nous votre projet : Jean-Yves Millet vous recontacte rapidement pour un premier échange.</p>
+              <p className="muted" style={{ marginTop: 24, maxWidth: 440 }}>Vous n&apos;avez pas besoin d&apos;avoir tout défini. Terrain identifié, maison à transformer ou simple réflexion : décrivez-nous où vous en êtes, Jean-Yves Millet vous recontacte pour un premier échange.</p>
             </div>
             <div className="contact-line"><span>Téléphone</span><a href={`tel:${SITE.phoneLink}`}>{SITE.phone}</a></div>
             {SITE.email && <div className="contact-line"><span>E-mail</span><a href={`mailto:${SITE.email}`}>{SITE.email}</a></div>}
@@ -204,5 +207,74 @@ export function Breadcrumb({ items }: { items: [string, string?][] }) {
         })),
       }} />
     </>
+  );
+}
+
+export function Audiences() {
+  return (
+    <section className="section section--tight" id="vous-etes" aria-label="Votre projet">
+      <div className="container">
+        <div className="audiences">
+          {AUDIENCES.map((a, i) => (
+            <article className={`audience reveal d${i}`} key={a.key}>
+              <div className="audience-media"><ProjectImg slug={a.cover[0]} num={a.cover[1]} alt="" sizes="(max-width: 900px) 100vw, 50vw" /></div>
+              <div className="audience-body">
+                <span className="eyebrow">{a.eyebrow}</span>
+                <h2 className="h3">{a.title}</h2>
+                <p>{a.intro}</p>
+                <ul>
+                  {a.items.map((it) => (
+                    <li key={it.label}><Link href={it.href}>{it.label}<Arrow /></Link></li>
+                  ))}
+                </ul>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function Arguments() {
+  return (
+    <div className="arguments">
+      {ARGUMENTS.map((a, i) => (
+        <article className={`argument reveal d${i % 2}`} key={a.title}>
+          <span className="argument-num">{String(i + 1).padStart(2, "0")}</span>
+          <h3>{a.title}</h3>
+          <p>{a.text}</p>
+          {a.quote && (
+            <figure className="argument-quote">
+              <blockquote>« {a.quote.text} »</blockquote>
+              <figcaption>{a.quote.author} · <span>avis Google</span></figcaption>
+            </figure>
+          )}
+        </article>
+      ))}
+    </div>
+  );
+}
+
+export function Budget() {
+  return (
+    <section className="section" id="budget" aria-labelledby="budget-title">
+      <div className="container intro-grid">
+        <div className="intro-aside reveal">
+          <span className="eyebrow">Votre budget</span>
+          <h2 className="h2" id="budget-title" style={{ marginTop: 18 }}>Un budget <em className="accent">maîtrisé</em>, pas subi.</h2>
+          <p className="muted" style={{ marginTop: 24 }}>La crainte de dépasser son budget est la première que nous entendons. C&apos;est aussi là que la double compétence d&apos;architecte et de technicien du bâtiment fait la différence : un projet bien dessiné est un projet bien chiffré.</p>
+          <figure className="argument-quote" style={{ marginTop: 8 }}>
+            <blockquote>« Les devis ont toujours été respectés. »</blockquote>
+            <figcaption>Michèle Delmaux · <span>avis Google</span></figcaption>
+          </figure>
+        </div>
+        <ol className="budget-steps">
+          {BUDGET_STEPS.map(([t, d]) => (
+            <li className="reveal" key={t}><h3>{t}</h3><p>{d}</p></li>
+          ))}
+        </ol>
+      </div>
+    </section>
   );
 }

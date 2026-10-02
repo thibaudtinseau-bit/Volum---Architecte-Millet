@@ -691,3 +691,54 @@ fieldset.field { border: 0; padding: 0; margin: 0; }
 .fact dt { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--text-soft); margin-bottom: 8px; }
 .fact dd { margin: 0; font-family: var(--serif); font-size: clamp(22px, 2vw, 30px); line-height: 1.15; }
 .split-media img, .project-hero img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ---------- Audiences ---------- */
+.audiences { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.audience { position: relative; display: grid; grid-template-rows: 220px auto; background: var(--ink); color: #fff; border-radius: 12px; overflow: hidden; }
+.audience-media { overflow: hidden; }
+.audience-media img { width: 100%; height: 100%; object-fit: cover; opacity: .85; transition: transform 1.2s var(--ease); }
+.audience:hover .audience-media img { transform: scale(1.04); }
+.audience-body { padding: 32px; display: grid; gap: 14px; align-content: start; }
+.audience-body .eyebrow { color: var(--lime); }
+.audience-body p { margin: 0; color: rgba(255,255,255,.7); }
+.audience-body ul { list-style: none; padding: 0; margin: 8px 0 0; border-top: 1px solid var(--line-light); }
+.audience-body li a { display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-bottom: 1px solid var(--line-light); font-weight: 500; transition: color .3s, padding .4s var(--ease); }
+.audience-body li a:hover { color: var(--lime); padding-left: 8px; }
+
+/* ---------- Arguments ---------- */
+.arguments { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-top: 1px solid var(--line-light); }
+.argument { padding: 40px 40px 44px 0; border-bottom: 1px solid var(--line-light); display: grid; gap: 14px; align-content: start; }
+.argument:nth-child(odd) { border-right: 1px solid var(--line-light); }
+.argument:nth-child(even) { padding-left: 40px; padding-right: 0; }
+.argument-num { font-family: var(--serif); font-style: italic; color: var(--lime); font-size: 22px; }
+.argument h3 { font-family: var(--serif); font-size: clamp(28px, 2.6vw, 40px); line-height: 1.05; }
+.argument p { margin: 0; color: rgba(255,255,255,.7); }
+.argument-quote { margin: 10px 0 0; padding-left: 18px; border-left: 2px solid var(--lime); }
+.argument-quote blockquote { margin: 0; font-family: var(--serif); font-style: italic; font-size: 20px; line-height: 1.35; }
+.argument-quote figcaption { margin-top: 8px; font-size: 13px; opacity: .7; }
+.section:not(.on-dark) .argument-quote blockquote { color: var(--text); }
+
+/* ---------- Budget ---------- */
+.budget-steps { list-style: none; counter-reset: b; padding: 0; margin: 0; border-top: 1px solid var(--line); }
+.budget-steps li { counter-increment: b; display: grid; grid-template-columns: 64px 1fr; column-gap: 24px; padding: 28px 0; border-bottom: 1px solid var(--line); }
+.budget-steps li::before { content: counter(b, decimal-leading-zero); grid-row: span 2; font-family: var(--serif); font-style: italic; font-size: 36px; line-height: 1; color: var(--emerald); }
+.budget-steps h3 { font-family: var(--serif); font-size: clamp(24px, 2.2vw, 32px); line-height: 1.1; margin-bottom: 8px; }
+.budget-steps p { margin: 0; color: var(--text-soft); }
+
+/* ---------- Étude de cas ---------- */
+.case { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; border-top: 1px solid var(--line); }
+.case-block { padding: 28px 28px 32px 0; border-bottom: 1px solid var(--line); }
+.case-block:nth-child(even) { padding-left: 28px; border-left: 1px solid var(--line); }
+.case-block h3 { font-size: 12px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--emerald); margin-bottom: 10px; }
+.case-block p { margin: 0; }
+.phases { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 20px 0 0; }
+.phases li { padding: 8px 14px; border-radius: 999px; background: var(--emerald-soft); color: var(--emerald-deep); font-size: 13px; font-weight: 500; }
+.hero-sub { font-family: var(--serif); font-style: italic; font-size: clamp(22px, 2.4vw, 34px); line-height: 1.2; margin: 20px 0 0; opacity: .95; }
+
+@media (max-width: 900px) {
+  .audiences, .arguments, .case { grid-template-columns: minmax(0, 1fr); }
+  .argument:nth-child(n) { border-right: 0; padding-left: 0; padding-right: 0; }
+  .case-block:nth-child(n) { border-left: 0; padding-left: 0; padding-right: 0; }
+  .audience { grid-template-rows: 180px auto; }
+  .audience-body { padding: 24px; }
+}

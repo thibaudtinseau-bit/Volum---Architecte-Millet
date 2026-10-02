@@ -10,6 +10,7 @@ const NAV = [
   { href: "/agence", label: "L'agence", key: "agence" },
   { href: "/projets", label: "Réalisations", key: "projets" },
   { href: "/#methode", label: "Méthode", key: "methode" },
+  { href: "/#budget", label: "Budget", key: "budget" },
   { href: "/#avis", label: "Avis", key: "avis" },
 ];
 

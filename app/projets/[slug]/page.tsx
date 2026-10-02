@@ -37,6 +37,13 @@ export default async function ProjectPage({ params }: Params) {
   const next = PROJECTS[(i + 1) % PROJECTS.length];
   const imgs = projectImages(p.slug);
   const facts: [string, string][] = [["Type", p.type], ["Lieu", p.place], ["Année", p.year || "—"], ["Budget travaux", p.budget || "Sur demande"]];
+  if (p.surface) facts.push(["Surface", p.surface]);
+  if (p.duree) facts.push(["Durée", p.duree]);
+  const caseBlocks = ([
+    ["Le besoin", p.besoin], ["Les contraintes", p.contraintes], ["La réponse architecturale", p.reponse],
+    ["La mission Volum", p.mission], ["Le résultat", p.resultat],
+  ] as [string, string | undefined][]).filter((b): b is [string, string] => !!b[1]);
+  const contactType = p.cats.includes("tertiaire") ? "tertiaire" : p.slug.startsWith("extension") ? "extension" : p.cats.includes("renovation") ? "renovation" : "maison";
 
   return (
     <>
@@ -64,8 +71,25 @@ export default async function ProjectPage({ params }: Params) {
           <h2 className="h3 reveal">{p.summary}</h2>
           <div>
             {p.text.map((t, k) => <p key={k} className={`${k === 0 ? "lead" : "muted"} reveal`}>{t}</p>)}
-            <div className="hero-actions reveal" style={{ marginTop: 32 }}>
-              <Link className="btn" href="/contact">Un projet similaire ? <Arrow /></Link>
+            {p.phases && (
+              <div className="reveal" style={{ marginTop: 28 }}>
+                <span className="eyebrow">Mission présentée</span>
+                <ul className="phases">{p.phases.map((ph) => <li key={ph}>{ph}</li>)}</ul>
+              </div>
+            )}
+            {caseBlocks.length > 0 && (
+              <div className="case reveal" style={{ marginTop: 40 }}>
+                {caseBlocks.map(([t, d]) => <div className="case-block" key={t}><h3>{t}</h3><p>{d}</p></div>)}
+              </div>
+            )}
+            {p.temoignage && (
+              <figure className="argument-quote reveal" style={{ marginTop: 32 }}>
+                <blockquote>« {p.temoignage.text} »</blockquote>
+                <figcaption>{p.temoignage.author}</figcaption>
+              </figure>
+            )}
+            <div className="hero-actions reveal" style={{ marginTop: 36 }}>
+              <Link className="btn" href={`/contact?projet=${contactType}`}>Un projet comparable ? Parlons-en <Arrow /></Link>
             </div>
           </div>
         </div>

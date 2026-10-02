@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
 import { Icon } from "@/components/Icons";
 import { ProjectImg } from "@/components/ProjectImg";
-import { Breadcrumb, Cta, Stats, Zone } from "@/components/Sections";
+import { Breadcrumb, Cta, Services, Stats, Zone } from "@/components/Sections";
 
 export const metadata: Metadata = {
   title: "L'agence — Jean-Yves Millet, architecte DPLG",
-  description: "Parcours, valeurs et approche de Jean-Yves Millet, architecte DPLG diplômé de l'École d'Architecture de Montpellier, installé à Montarnaud depuis 1999.",
+  description: "Jean-Yves Millet, architecte DPLG et technicien du génie civil : parcours, approche et expertises. Une architecture dessinée pour être construite, à Montpellier et dans l'Hérault depuis 1999.",
   alternates: { canonical: "/agence" },
 };
 
 const VALUES: [string, string, string][] = [
-  ["ear", "Écoute", "Chaque projet commence par un dialogue. Comprendre vos besoins et vos aspirations est la base d'une architecture juste."],
-  ["ruler", "Rigueur", "Une double compétence architecte et génie civil : des plans précis, des chantiers maîtrisés, des budgets respectés."],
-  ["leaf", "Éco-sensibilité", "Orientation, inertie, matériaux, énergie : concevoir des bâtiments sobres, confortables et durables."],
-  ["shield", "Engagement", "Un interlocuteur unique, présent de la première esquisse à la réception des travaux."],
+  ["ear", "Comprendre", "Vos envies, votre mode de vie, votre budget, votre terrain : tout commence par un vrai dialogue, avant le premier trait."],
+  ["ruler", "Anticiper", "La culture du génie civil permet d'intégrer dès la conception la structure, le sol et la mise en œuvre. Les mauvaises surprises se règlent sur plan, pas sur le chantier."],
+  ["leaf", "Durer", "Orientation, inertie, matériaux, énergie : des bâtiments sobres et confortables, performants (RE2020 pour le neuf), pensés pour bien vieillir."],
+  ["shield", "Accompagner", "Un seul interlocuteur, de la première esquisse à la réception des travaux. Celui qui a dessiné votre projet est aussi celui qui le suit sur le chantier."],
 ];
 
 const TIMELINE: [string, string, string][] = [
@@ -32,8 +32,8 @@ export default function Agence() {
         <div className="container">
           <Breadcrumb items={[["Accueil", "/"], ["L'agence"]]} />
           <div className="page-hero-grid">
-            <h1 className="display reveal">L&apos;architecte, <em className="accent">l&apos;agence</em>.</h1>
-            <p className="lead reveal d1">Volum, c&apos;est l&apos;agence de Jean-Yves Millet, architecte DPLG installé à Montarnaud, aux portes de Montpellier, depuis 1999.</p>
+            <h1 className="display reveal">L&apos;architecte <em className="accent">et</em> le constructeur.</h1>
+            <p className="lead reveal d1">Volum, c&apos;est l&apos;agence de Jean-Yves Millet : architecte DPLG, technicien du génie civil, installé à Montarnaud, aux portes de Montpellier, depuis 1999.</p>
           </div>
         </div>
       </section>
@@ -50,7 +50,7 @@ export default function Agence() {
         <div className="container split">
           <div>
             <span className="eyebrow reveal">Jean-Yves Millet</span>
-            <h2 className="h2 reveal" style={{ margin: "18px 0 32px" }}>Concevoir et <em className="accent">construire</em>.</h2>
+            <h2 className="h2 reveal" style={{ margin: "18px 0 32px" }}>Dessiner en sachant <em className="accent">comment construire</em>.</h2>
             <p className="lead reveal">Diplômé de l&apos;École d&apos;Architecture de Montpellier et titulaire d&apos;un DUT en Génie civil, Jean-Yves Millet allie la sensibilité du concepteur à la rigueur du technicien.</p>
             <p className="muted reveal">Cette double compétence lui confère une forte appétence tant pour la conception architecturale que pour le suivi technique sur le terrain. Actif sur le secteur montpelliérain depuis 1999, il a notamment exercé les fonctions de directeur technique pour la société MV Promotion au début des années 2000, parallèlement à son activité libérale.</p>
             <p className="muted reveal">Son activité est généraliste et se répartit principalement entre le logement individuel et collectif — environ 60 % — et les bâtiments d&apos;activité comme les bureaux — environ 30 %. Il compte à son actif plusieurs programmes immobiliers complexes et plus d&apos;une centaine de maisons individuelles.</p>
@@ -68,14 +68,24 @@ export default function Agence() {
       <section className="section section--cream">
         <div className="container">
           <div className="section-head">
-            <div className="reveal"><span className="eyebrow">Valeurs</span><h2 className="h2">Ce qui guide <em className="accent">chaque projet</em>.</h2></div>
-            <p className="muted reveal d1">Technologies nouvelles, éco-sensibilité, typologie et concept de vie : autant de questions qui orientent chaque projet vers une réponse unique.</p>
+            <div className="reveal"><span className="eyebrow">Approche</span><h2 className="h2">Quatre engagements, <em className="accent">chaque projet</em>.</h2></div>
+            <p className="muted reveal d1">Technologies nouvelles, éco-sensibilité, typologie et concept de vie : autant de questions qui orientent chaque projet vers une réponse juste — et constructible.</p>
           </div>
           <div className="values">
             {VALUES.map(([ic, t, d], i) => (
               <article className={`value reveal d${i}`} key={t}><Icon name={ic} className="" /><h3>{t}</h3><p>{d}</p></article>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="section section--dark on-dark" id="expertises" aria-labelledby="expertises-title">
+        <div className="container">
+          <div className="section-head">
+            <div className="reveal"><span className="eyebrow">Expertises</span><h2 className="h2" id="expertises-title">Du logement <em className="accent">au tertiaire</em>.</h2></div>
+            <p className="muted reveal d1">Environ 60 % de l&apos;activité concerne le logement individuel et collectif, 30 % les bâtiments d&apos;activité et les bureaux. Les missions vont de la simple conception jusqu&apos;à la maîtrise d&apos;œuvre complète.</p>
+          </div>
+          <Services />
         </div>
       </section>
 

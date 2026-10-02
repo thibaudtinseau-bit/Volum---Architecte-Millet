@@ -15,7 +15,7 @@ const logo = Montserrat({ subsets: ["latin"], weight: ["400", "500"], variable: 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: "Volum — Jean-Yves Millet, architecte DPLG à Montpellier & Montarnaud",
+    default: "Volum — Jean-Yves Millet, architecte DPLG à Montpellier | Une architecture dessinée pour être construite",
     template: "%s | Volum, architecte DPLG",
   },
   description: SITE.description,

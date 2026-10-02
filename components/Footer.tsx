@@ -9,7 +9,7 @@ export function Footer() {
         <div className="footer-top">
           <div>
             <Link className="brand" href="/" aria-label="Volum — accueil"><Logo tagline /></Link>
-            <p className="footer-claim">Concevoir avec <em>sensibilité</em>, construire avec <em>exigence</em>.</p>
+            <p className="footer-claim">Une architecture <em>dessinée</em> pour être <em>construite</em>.</p>
           </div>
           <div>
             <h3>Navigation</h3>
@@ -17,7 +17,8 @@ export function Footer() {
               <li><Link href="/">Accueil</Link></li>
               <li><Link href="/agence">L&apos;agence</Link></li>
               <li><Link href="/projets">Réalisations</Link></li>
-              <li><Link href="/#expertises">Expertises</Link></li>
+              <li><Link href="/agence#expertises">Expertises</Link></li>
+              <li><Link href="/#budget">Votre budget</Link></li>
               <li><Link href="/#avis">Avis clients</Link></li>
               <li><Link href="/contact">Contact</Link></li>
             </ul>
