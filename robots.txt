@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://thibaudtinseau-bit.github.io/Volum---Architecte-Millet/sitemap.xml
