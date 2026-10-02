@@ -1,30 +1,37 @@
 # Volum — Jean-Yves Millet, Architecte DPLG
 
-Site vitrine statique (HTML/CSS/JS, sans dépendance), responsive, prêt pour **GitHub Pages**.
-Direction artistique : vert émeraude & noir, typographie éditoriale (Instrument Serif + Inter Tight).
+Site vitrine en **Next.js (App Router)**, rendu côté serveur et pré-généré en HTML statique (SSG) :
+chaque page contient son contenu complet dans le HTML (textes, projets, avis, données structurées),
+idéal pour le référencement. Déployé sur **Vercel**.
 
-## Pages
-| Page | Contenu |
+## Démarrer
+```bash
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # build de production
+```
+
+## Structure
+| Chemin | Rôle |
 |---|---|
-| `index.html` | Hero diaporama, agence, chiffres clés, expertises, projets choisis, méthode, avis Google, FAQ, zone d'intervention, formulaire |
-| `agence.html` | Parcours de Jean-Yves Millet, valeurs, frise chronologique |
-| `projets.html` | 15 réalisations filtrables (Maisons / Tertiaire / Rénovation / Études) |
-| `projets/*.html` | Une page par projet : fiche, texte, galerie avec visionneuse |
-| `contact.html` | Formulaire détaillé + coordonnées + carte |
-| `mentions-legales.html` | Mentions légales & politique de confidentialité (RGPD) |
+| `app/page.tsx` | Accueil : diaporama, agence, chiffres, expertises, projets, méthode, avis, FAQ, zone, contact |
+| `app/agence/` | Parcours, valeurs, frise |
+| `app/projets/` | Liste filtrable des 15 réalisations |
+| `app/projets/[slug]/` | Page projet (pré-générée), galerie + visionneuse |
+| `app/contact/`, `app/mentions-legales/` | Contact, mentions légales & RGPD |
+| `app/api/contact/route.ts` | Envoi du formulaire (Resend ou Formspree) |
+| `app/sitemap.ts`, `app/robots.ts`, `app/manifest.ts` | SEO |
+| `app/icon.png`, `app/favicon.ico`, `app/apple-icon.png` | Favicon (le « V » du logo) |
+| `lib/content.ts` | **Tous les textes et projets** |
+| `lib/reviews-data.ts` | Avis Google enregistrés |
+| `public/img/projets/` | Photos (WebP 1600 px + 760 px) |
+| `public/logo/` | Logo complet et « V » |
 
-## Modifier le site
-- **Textes, projets, communes, FAQ** : `scripts/content.py`, puis lancer `python3 scripts/build.py` (régénère toutes les pages).
-- **Avis Google** : `assets/js/avis.js` (aucune régénération nécessaire).
-- **Formulaire, e-mail, clé Google** : `assets/js/config.js`.
-- **Design** : `assets/css/style.css` (couleurs dans `:root`).
-- **Photos** : `assets/img/projets/<projet>/NN.webp` (+ `NN-sm.webp` en 760 px). Après ajout, mettre à jour `scripts/images.json`.
+## Variables d'environnement (Vercel → Settings → Environment Variables)
+Voir `.env.example`.
+- `NEXT_PUBLIC_SITE_URL` : URL définitive (nom de domaine) pour les balises canoniques et le sitemap.
+- Formulaire : `RESEND_API_KEY` + `CONTACT_EMAIL` (recommandé) **ou** `FORMSPREE_ENDPOINT`.
+- Avis Google en direct (facultatif) : `GOOGLE_PLACES_API_KEY` — rafraîchis une fois par jour, côté serveur.
 
-## À configurer avant la mise en ligne
-1. **Formulaire de contact** : créer un formulaire gratuit sur [Formspree](https://formspree.io) et coller l'URL dans `FORM_ENDPOINT` (`assets/js/config.js`). Renseigner aussi `CONTACT_EMAIL`.
-2. **Avis Google en direct (optionnel)** : renseigner `GOOGLE_PLACES_API_KEY` (clé « Places API (New) », restreinte au domaine). Sans clé, les 15 avis enregistrés dans `avis.js` sont affichés.
-3. **Mentions légales** : compléter le n° d'inscription à l'Ordre et l'assurance décennale.
-4. **URL du site** : si vous utilisez un nom de domaine, modifier `SITE["url"]` dans `scripts/content.py` puis relancer le build.
-
-## Publier sur GitHub Pages
-Settings → Pages → *Deploy from a branch* → choisir la branche et le dossier `/ (root)`.
+## À compléter
+- Mentions légales : n° d'inscription à l'Ordre et assurance décennale (`app/mentions-legales/page.tsx`).
