@@ -1,14 +1,18 @@
-/* Logo VOLUM : le « V » (image fournie) + le mot-symbole en texte,
-   ce qui permet de l'afficher en clair sur fond sombre et en noir sur fond clair. */
+/* Logo VOLUM (V + sphère). Deux déclinaisons détourées : texte noir pour les fonds clairs,
+   texte blanc pour les fonds sombres ; l'en-tête bascule de l'une à l'autre selon son état. */
+/* eslint-disable @next/next/no-img-element */
 export function Logo({ tagline = false }: { tagline?: boolean }) {
-  return (
-    <span className={`logo${tagline ? " logo--full" : ""}`}>
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img className="logo-v" src="/logo/volum-v-240.webp" alt="" width={240} height={182} />
-      <span className="logo-text">
-        <span className="logo-word">OLUM</span>
-        <span className="logo-sub">{tagline ? "Conception | Réalisation" : "J.-Y. Millet · Architecte DPLG"}</span>
+  if (tagline) {
+    return (
+      <span className="logo logo--full">
+        <img src="/logo/volum-logo-light.webp" alt="Volum — Conception Réalisation, Jean-Yves Millet architecte DPLG" width={720} height={371} />
       </span>
+    );
+  }
+  return (
+    <span className="logo">
+      <img className="logo-dark" src="/logo/volum-wordmark.webp" alt="Volum" width={480} height={182} />
+      <img className="logo-light" src="/logo/volum-wordmark-light.webp" alt="" aria-hidden="true" width={480} height={182} />
     </span>
   );
 }
