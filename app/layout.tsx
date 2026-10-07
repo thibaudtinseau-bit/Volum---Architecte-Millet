@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Instrument_Serif, Inter_Tight, Montserrat } from "next/font/google";
+import { Instrument_Serif, Inter_Tight } from "next/font/google";
 import { ClientEffects } from "@/components/ClientEffects";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
@@ -10,7 +10,6 @@ import "./globals.css";
 
 const serif = Instrument_Serif({ subsets: ["latin"], weight: "400", style: ["normal", "italic"], variable: "--font-serif", display: "swap" });
 const sans = Inter_Tight({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700"], variable: "--font-sans", display: "swap" });
-const logo = Montserrat({ subsets: ["latin"], weight: ["400", "500"], variable: "--font-logo", display: "swap" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
@@ -57,7 +56,7 @@ const orgLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fr" className={`no-js ${serif.variable} ${sans.variable} ${logo.variable}`} suppressHydrationWarning>
+    <html lang="fr" className={`no-js ${serif.variable} ${sans.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.remove('no-js')" }} />
       </head>
