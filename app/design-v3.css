@@ -1,0 +1,132 @@
+/* =========================================================
+   VOLÜM V3 — Signature émeraude
+   Toutes les règles sont limitées à html[data-design="v3"] :
+   la V2 (app/globals.css) n'est jamais modifiée par ce fichier.
+   Pour garder uniquement la V3 : fusionner ce fichier dans
+   globals.css en retirant le préfixe html[data-design="v3"].
+   ========================================================= */
+
+/* ---------- Palette ---------- */
+html[data-design="v3"] {
+  --mineral: #eceae4;
+  --anthracite: #20221f;
+  --anthracite-hover: #105b4b;   /* survol des boutons : émeraude profond */
+  --grey: #777a73;               /* graphique uniquement */
+  --text-soft: #62655f;          /* texte secondaire (AA sur les deux fonds) */
+  --terracotta: #167d65;         /* les accents graphiques V2 deviennent émeraude */
+  --accent-text: #147560;        /* émeraude pour le texte (AA) */
+  --accent-on-dark: #7fc4ac;
+  --border: #d8d9d2;
+  --border-dark: rgba(247, 246, 242, .16);
+  --emerald: #167d65;
+  --emerald-deep: #105b4b;
+  --emerald-soft: #ddebe5;
+  --fs-h2: clamp(30px, 25px + 1.75vw, 52px);
+}
+html[data-design="v3"] ::selection { background: var(--emerald-deep); color: var(--stone); }
+html[data-design="v3"] :focus-visible { outline-color: var(--emerald-deep); }
+html[data-design="v3"] .on-dark :focus-visible { outline-color: var(--stone); }
+
+/* ---------- Typographie ---------- */
+html[data-design="v3"] .display, html[data-design="v3"] .h1 { letter-spacing: -.035em; }
+html[data-design="v3"] .h2 { letter-spacing: -.03em; line-height: 1.08; }
+html[data-design="v3"] .numbered h3, html[data-design="v3"] .timeline h3 { letter-spacing: -.025em; }
+/* un mot-clé par titre, ponctuellement */
+html[data-design="v3"] ::highlight(v3-mark) { color: var(--accent-text); }
+
+/* Surtitres numérotés « 01 / L'AGENCE » */
+html[data-design="v3"] .eyebrow { letter-spacing: .16em; }
+html[data-design="v3"] .eyebrow[data-num]::before {
+  content: attr(data-num) "\00a0/"; width: auto; height: auto; background: none;
+  color: var(--accent-text); font-weight: 600; letter-spacing: .06em;
+}
+/* point émeraude sur photo */
+html[data-design="v3"] .hero-content .eyebrow::before,
+html[data-design="v3"] .project-hero .eyebrow::before { width: 7px; height: 7px; border-radius: 50%; background: var(--accent-on-dark); }
+
+/* ---------- Haut de page (accueil) ---------- */
+html[data-design="v3"] .hero-meta { border-top: 1px solid rgba(247, 246, 242, .22); padding-top: 12px; }
+html[data-design="v3"] .hero-dots button.is-active::before { background: var(--accent-on-dark); }
+
+/* ---------- En-tête des pages intérieures ---------- */
+html[data-design="v3"] .page-hero-grid > .lead { position: relative; padding-top: 24px; }
+html[data-design="v3"] .page-hero-grid > .lead::before {
+  content: ""; position: absolute; left: 0; top: 0; width: 40px; height: 1px; background: var(--terracotta);
+}
+html[data-design="v3"] .breadcrumb [aria-current="page"] { color: var(--accent-text); }
+
+/* ---------- Navigation ---------- */
+html[data-design="v3"] .site-header.is-solid .nav a:not(.btn)::after { background: var(--terracotta); }
+html[data-design="v3"] .nav a[aria-current="page"]::after { height: 1px; }
+
+/* ---------- Filets d'en-tête de section : 1 px + segment émeraude ---------- */
+html[data-design="v3"] .section-head { position: relative; padding-top: 28px; border-top: 1px solid var(--border); }
+html[data-design="v3"] .section-head::before {
+  content: ""; position: absolute; left: 0; top: -1px; width: 56px; height: 1px; background: var(--terracotta);
+}
+
+/* ---------- Listes numérotées (engagements, piliers) ---------- */
+html[data-design="v3"] .numbered .num { display: inline-flex; align-items: center; gap: 10px; }
+html[data-design="v3"] .numbered .num::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--terracotta); }
+html[data-design="v3"] .numbered > li { transition: border-color 260ms var(--ease); }
+html[data-design="v3"] .numbered > li:hover { border-top-color: var(--terracotta); }
+@media (min-width: 900px) {
+  /* léger décalage éditorial de la colonne de droite */
+  html[data-design="v3"] .numbered--2 > li:nth-child(even) { margin-top: 48px; }
+}
+
+/* ---------- Expertises ---------- */
+html[data-design="v3"] .expertise-list .arrow { color: var(--text-soft); transition: transform var(--dur) var(--ease), color var(--dur) var(--ease); }
+html[data-design="v3"] .expertise-list a:hover .arrow { color: var(--accent-text); }
+html[data-design="v3"] .expertise-list a { position: relative; }
+html[data-design="v3"] .expertise-list a::after {
+  content: ""; position: absolute; left: 0; bottom: -1px; width: 100%; height: 1px; background: var(--terracotta);
+  transform: scaleX(0); transform-origin: left; transition: transform 300ms var(--ease);
+}
+html[data-design="v3"] .expertise-list a:hover::after, html[data-design="v3"] .expertise-list a:focus-visible::after { transform: scaleX(1); }
+html[data-design="v3"] .subnav a:hover { border-color: var(--terracotta); background: var(--emerald-soft); }
+
+/* ---------- Parcours / timeline ---------- */
+html[data-design="v3"] .timeline > li::after { background: var(--emerald-soft); }
+html[data-design="v3"] .section--mineral .timeline > li::after { background: var(--emerald-soft); }
+html[data-design="v3"] .timeline > li:last-child::after { background: var(--terracotta); }
+
+/* ---------- Chiffres clés ---------- */
+html[data-design="v3"] .stat-value { font-weight: 400; letter-spacing: -.04em; }
+html[data-design="v3"] .stat-label::before { content: ""; display: block; width: 24px; height: 1px; margin-bottom: 12px; background: var(--terracotta); }
+
+/* ---------- Liens et boutons ---------- */
+html[data-design="v3"] .link-arrow .arrow { transition: transform var(--dur) var(--ease), color var(--dur) var(--ease); }
+html[data-design="v3"] .link-arrow:hover .arrow { color: var(--accent-text); }
+html[data-design="v3"] .btn--secondary:hover { background: var(--emerald-deep); border-color: var(--emerald-deep); }
+
+/* ---------- Photographies ---------- */
+html[data-design="v3"] .project-media img { transition: transform 600ms var(--ease); }
+html[data-design="v3"] .project-card:hover .project-media img { transform: scale(1.02); }
+
+/* ---------- Citations, FAQ, avis ---------- */
+html[data-design="v3"] .faq summary::after { color: var(--accent-text); }
+html[data-design="v3"] .faq details[open] summary { color: var(--accent-text); }
+html[data-design="v3"] .rating-card:hover { border-color: var(--terracotta); }
+html[data-design="v3"] .arrow-btn:hover { border-color: var(--terracotta); color: var(--accent-text); }
+
+/* ---------- Contact : appel à l'action plus visible ---------- */
+html[data-design="v3"] .form-foot .btn { background: var(--emerald-deep); border-color: var(--emerald-deep); }
+html[data-design="v3"] .form-foot .btn:hover { background: #0c4a3d; border-color: #0c4a3d; }
+html[data-design="v3"] .field input:focus, html[data-design="v3"] .field select:focus, html[data-design="v3"] .field textarea:focus {
+  border-color: var(--emerald-deep); box-shadow: 0 0 0 1px var(--emerald-deep);
+}
+html[data-design="v3"] .chip input:checked + span { background: var(--emerald-deep); border-color: var(--emerald-deep); }
+html[data-design="v3"] .consent input { accent-color: var(--emerald-deep); }
+html[data-design="v3"] .form-panel { border-top: 2px solid var(--terracotta); }
+
+/* ---------- Pied de page ---------- */
+html[data-design="v3"] .footer-top a:not(.btn):hover { color: var(--accent-on-dark); }
+html[data-design="v3"] .footer-bottom a:hover { color: var(--accent-on-dark); }
+
+/* ---------- Apparitions discrètes au défilement (activées par DesignSwitcher) ---------- */
+html[data-design="v3"].v3-reveal-on .v3-reveal { opacity: 0; transform: translateY(14px); transition: opacity 480ms var(--ease), transform 480ms var(--ease); }
+html[data-design="v3"].v3-reveal-on .v3-reveal.is-in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  html[data-design="v3"].v3-reveal-on .v3-reveal { opacity: 1; transform: none; transition: none; }
+}

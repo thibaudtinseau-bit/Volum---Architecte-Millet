@@ -1,11 +1,15 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Manrope } from "next/font/google";
+import { DesignSwitcher } from "@/components/DesignSwitcher";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { JsonLd } from "@/components/Sections";
 import { SITE } from "@/lib/content";
+import { DESIGN_CONFIG, DESIGN_INIT_SCRIPT, SERVER_DESIGN } from "@/lib/design";
 import { SAVED_REVIEWS } from "@/lib/reviews-data";
 import "./globals.css";
+import "./design-v3.css";
+import "./design-switcher.css";
 
 const manrope = Manrope({ subsets: ["latin"], weight: ["400", "500", "600"], variable: "--font-manrope", display: "swap" });
 const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "600"], variable: "--font-inter", display: "swap" });
@@ -55,12 +59,16 @@ const orgLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fr" className={`${manrope.variable} ${inter.variable}`}>
+    <html lang="fr" className={`${manrope.variable} ${inter.variable}`} data-design={SERVER_DESIGN} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: DESIGN_INIT_SCRIPT }} />
+      </head>
       <body>
         <a className="skip-link" href="#main">Aller au contenu</a>
         <Header />
         <main id="main">{children}</main>
         <Footer />
+        {DESIGN_CONFIG.enableComparison && <DesignSwitcher />}
         <JsonLd data={orgLd} />
       </body>
     </html>
