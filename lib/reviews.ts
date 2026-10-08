@@ -4,14 +4,31 @@ const QUERY = "Millet Jean-Yves architecte, 8 Rue de l'Ancienne Poste, 34570 Mon
 
 type PlacesReview = {
   rating?: number;
-  relativePublishTimeDescription?: string;
+  publishTime?: string;
   text?: { text?: string };
   originalText?: { text?: string };
   authorAttribution?: { displayName?: string; photoUri?: string };
 };
 
+const MIN_RATING = 4;
+
+/** Avis affichés : 4 étoiles et plus, du plus récent au plus ancien ; les avis sans date suivent, dans l'ordre enregistré. */
+function forDisplay(data: ReviewsData): ReviewsData {
+  const time = (r: Review) => (r.date ? Date.parse(r.date) : -Infinity);
+  const reviews = data.reviews
+    .filter((r) => r.rating >= MIN_RATING && r.text)
+    .map((r, i) => ({ r, i }))
+    .sort((a, b) => time(b.r) - time(a.r) || a.i - b.i)
+    .map(({ r }) => r);
+  return { ...data, reviews };
+}
+
 /** Avis enregistrés + avis Google en direct (si une clé API est configurée). Rendu côté serveur. */
 export async function getReviews(): Promise<ReviewsData> {
+  return forDisplay(await mergeReviews());
+}
+
+async function mergeReviews(): Promise<ReviewsData> {
   const key = process.env.GOOGLE_PLACES_API_KEY;
   if (!key) return SAVED_REVIEWS;
   try {
@@ -36,7 +53,7 @@ export async function getReviews(): Promise<ReviewsData> {
       author: x.authorAttribution?.displayName || "Client",
       photo: x.authorAttribution?.photoUri,
       rating: x.rating || 5,
-      when: x.relativePublishTimeDescription,
+      date: x.publishTime,
       text: x.originalText?.text || x.text?.text || "",
     }));
     const seen = new Set(live.map((x) => x.author.toLowerCase()));

@@ -10,7 +10,8 @@
    ========================================================= */
 import saved from "./reviews.json";
 
-export type Review = { author: string; rating: number; text: string; localGuide?: boolean; photo?: string; when?: string };
+/** `date` : date de publication sur Google (ISO), connue pour les avis récupérés par l'API. */
+export type Review = { author: string; rating: number; text: string; localGuide?: boolean; photo?: string; date?: string };
 export type ReviewsData = { rating: number; count: number; reviews: Review[] };
 
 export const SAVED_REVIEWS: ReviewsData = saved;

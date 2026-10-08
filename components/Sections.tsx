@@ -146,6 +146,7 @@ export function Faq({ mineral = false }: { mineral?: boolean }) {
 export async function ReviewsSection({ mineral = false }: { mineral?: boolean }) {
   const data = await getReviews();
   const initials = (n: string) => n.split(/\s+/).filter(Boolean).slice(0, 2).map((p) => p[0].toUpperCase()).join("");
+  const month = (d: string) => new Date(d).toLocaleDateString("fr-FR", { month: "long", year: "numeric", timeZone: "Europe/Paris" });
   return (
     <section className={`section${mineral ? " section--mineral" : ""}`} id="avis" aria-labelledby="avis-title">
       <div className="container">
@@ -178,7 +179,7 @@ export async function ReviewsSection({ mineral = false }: { mineral?: boolean })
                   : <span className="review-avatar" aria-hidden="true">{initials(r.author)}</span>}
                 <div>
                   <strong>{r.author}</strong>
-                  <span>{r.when ? `${r.when} · ` : ""}{r.localGuide ? "Local Guide · " : ""}Avis Google</span>
+                  <span>{r.date ? <><time dateTime={r.date}>{month(r.date)}</time> · </> : ""}{r.localGuide ? "Local Guide · " : ""}Avis Google</span>
                 </div>
               </div>
             </article>
