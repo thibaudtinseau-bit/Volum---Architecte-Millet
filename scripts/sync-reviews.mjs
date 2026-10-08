@@ -10,11 +10,17 @@ if (!res.ok) throw new Error(`${SITE}/api/avis : HTTP ${res.status}`);
 const live = await res.json();
 
 const saved = JSON.parse(await readFile(FILE, "utf8"));
+const liveByAuthor = new Map((live.reviews || []).map((r) => [r.author?.toLowerCase(), r]));
+// Complète la date des avis déjà enregistrés quand Google la fournit
+for (const r of saved.reviews) {
+  const l = liveByAuthor.get(r.author.toLowerCase());
+  if (!r.date && l?.date) r.date = l.date;
+}
 const known = new Set(saved.reviews.map((r) => r.author.toLowerCase()));
-// Photo et date relative non conservées : les URL de photo expirent et « il y a 2 mois » vieillit mal.
+// Photo non conservée : les URL de photo Google expirent.
 const added = (live.reviews || [])
   .filter((r) => r.author && r.text && !known.has(r.author.toLowerCase()))
-  .map(({ author, rating, text, localGuide }) => ({ author, ...(localGuide ? { localGuide } : {}), rating, text }));
+  .map(({ author, rating, text, localGuide, date }) => ({ author, ...(localGuide ? { localGuide } : {}), rating, ...(date ? { date } : {}), text }));
 
 const next = {
   rating: typeof live.rating === "number" ? live.rating : saved.rating,
