@@ -14,12 +14,15 @@ npm run build    # build de production
 ## Structure
 | Chemin | Rôle |
 |---|---|
-| `app/page.tsx` | Accueil : diaporama, agence, chiffres, expertises, projets, méthode, avis, FAQ, zone, contact |
-| `app/agence/` | Parcours, valeurs, frise |
+| `app/page.tsx` | Accueil : positionnement, expertises, engagements, agence, projets, approche, avis, FAQ, contact |
+| `app/agence/` | Présentation de Jean-Yves Millet : vision, expertise, engagement, parcours |
+| `app/expertises/` | Construction de maison, extension, rénovation, projets professionnels (ancres `#maison`, `#extension`, `#renovation`, `#professionnels`) |
+| `app/approche/` | Les 5 étapes d'un projet, budget, mission |
 | `app/projets/` | Liste filtrable des 15 réalisations |
 | `app/projets/[slug]/` | Page projet (pré-générée), galerie + visionneuse |
 | `app/contact/`, `app/mentions-legales/` | Contact, mentions légales & RGPD |
 | `app/api/contact/route.ts` | Envoi du formulaire (Resend ou Formspree) |
+| `app/globals.css` | **Design system** : couleurs, typographie (Manrope / Inter), espacements, boutons, formulaires, compositions |
 | `app/sitemap.ts`, `app/robots.ts`, `app/manifest.ts` | SEO |
 | `app/icon.png`, `app/favicon.ico`, `app/apple-icon.png` | Favicon (le « V » du logo) |
 | `lib/content.ts` | **Tous les textes et projets** |

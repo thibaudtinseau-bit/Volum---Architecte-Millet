@@ -6,7 +6,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const pages: MetadataRoute.Sitemap = [
     { url: `${SITE.url}/`, lastModified: now, changeFrequency: "monthly", priority: 1 },
     { url: `${SITE.url}/agence`, lastModified: now, changeFrequency: "yearly", priority: 0.8 },
+    { url: `${SITE.url}/expertises`, lastModified: now, changeFrequency: "yearly", priority: 0.8 },
     { url: `${SITE.url}/projets`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${SITE.url}/approche`, lastModified: now, changeFrequency: "yearly", priority: 0.7 },
     { url: `${SITE.url}/contact`, lastModified: now, changeFrequency: "yearly", priority: 0.8 },
   ];
   return pages.concat(
