@@ -7,7 +7,7 @@ export const runtime = "nodejs";
   Envoi du formulaire de contact : un e-mail récapitulatif mis en forme à chaque
   adresse de CONTACT_EMAIL (séparées par des virgules). Réponse directe au visiteur
   via « Répondre ». Configurez UNE des options dans les variables d'environnement Vercel :
-   - SMTP_USER + SMTP_PASS (mot de passe d'application Gmail ; SMTP_HOST/SMTP_PORT facultatifs) → recommandé
+   - SMTP_USER + SMTP_PASS (mot de passe d'application Gmail ; SMTP_HOST/SMTP_PORT/SMTP_SECURE facultatifs) → recommandé
    - RESEND_API_KEY (+ RESEND_FROM avec un domaine vérifié)                                  → resend.com
    - FORMSPREE_ENDPOINT                                                                         → formspree.io
 */
@@ -92,11 +92,14 @@ export async function POST(req: Request) {
 
   try {
     if (process.env.SMTP_USER && process.env.SMTP_PASS && to.length) {
+      // mêmes conventions que le projet Goupil : les valeurs peuvent être recopiées telles quelles
+      const rawHost = process.env.SMTP_HOST;
+      const port = Number(process.env.SMTP_PORT || 587);
       const transport = nodemailer.createTransport({
-        host: process.env.SMTP_HOST || "smtp.gmail.com",
-        port: Number(process.env.SMTP_PORT || 465),
-        secure: Number(process.env.SMTP_PORT || 465) === 465,
-        auth: { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS },
+        host: rawHost && !rawHost.includes("@") ? rawHost : "smtp.gmail.com",
+        port,
+        secure: process.env.SMTP_SECURE ? process.env.SMTP_SECURE === "true" : port === 465,
+        auth: { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS.replace(/\s+/g, "") },
       });
       await transport.sendMail({ from: `Site Volum <${process.env.SMTP_USER}>`, to, replyTo, subject, text, html });
       return NextResponse.json({ ok: true });
