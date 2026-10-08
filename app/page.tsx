@@ -3,7 +3,7 @@ import { HeroSlider } from "@/components/HeroSlider";
 import { Arrow } from "@/components/Icons";
 import { ProjectCard } from "@/components/ProjectCard";
 import { ProjectImg } from "@/components/ProjectImg";
-import { Arguments, Audiences, Budget, ContactSection, Faq, ReviewsSection, Stats, Steps, Zone } from "@/components/Sections";
+import { ContactSection, Engagements, ExpertiseList, Faq, ReviewsSection, Stats, Steps } from "@/components/Sections";
 import { FEATURED, HERO_SLIDES, PROJECTS, getProject, imgSize, imgSrc } from "@/lib/content";
 
 export const revalidate = 86400; // avis Google rafraîchis une fois par jour
@@ -13,105 +13,113 @@ export default function Home() {
     const [w, h] = imgSize(slug, num);
     return { src: imgSrc(slug, num), srcSm: imgSrc(slug, num, true), w, h, caption };
   });
-  const words = ["Maisons d’architecte", "Extensions", "Réhabilitations", "Bureaux", "Permis de construire", "Suivi de chantier"];
 
   return (
     <>
-      <section className="hero" aria-label="Présentation">
-        <HeroSlider slides={slides} />
-        <div className="container hero-content">
-          <div className="hero-kicker"><span>Architecte DPLG</span><span>Génie civil</span><span>Montpellier · Hérault · depuis 1999</span></div>
-          <h1 className="display">
-            <span className="line"><span>Une architecture</span></span>
-            <span className="line"><span>dessinée pour</span></span>
-            <span className="line"><span>être <em>construite</em>.</span></span>
-          </h1>
-          <div className="hero-bottom">
-            <div>
-              <p>La sensibilité de l&apos;architecte, la rigueur du constructeur. Jean-Yves Millet conçoit votre maison, votre extension ou vos bureaux, et suit lui-même le chantier jusqu&apos;à la remise des clés.</p>
+      <section className="hero on-dark" aria-labelledby="hero-title">
+        <HeroSlider slides={slides}>
+          <span className="eyebrow">Volum — Architecture &amp; maîtrise d&apos;œuvre</span>
+          <h1 className="display" id="hero-title"><span>La sensibilité de l&apos;architecte.</span> <span>La rigueur du bâtisseur.</span></h1>
+          <p className="hero-lead">VOLUM conçoit et accompagne vos projets de construction, de rénovation et d&apos;extension à Montpellier et dans l&apos;Hérault. Une approche qui associe création architecturale, expertise technique et maîtrise du chantier.</p>
+          <div className="actions">
+            <Link className="btn btn--light" href="/contact">Échanger sur mon projet <Arrow /></Link>
+            <Link className="btn btn--outline-light" href="/agence">Découvrir l&apos;agence</Link>
+          </div>
+        </HeroSlider>
+      </section>
+
+      <section className="section" id="expertises" aria-labelledby="expertises-title">
+        <div className="container comp-split">
+          <div className="stack">
+            <span className="eyebrow">Expertises</span>
+            <h2 className="h2" id="expertises-title">Quatre types de projets, une même exigence.</h2>
+            <p className="muted">Maisons neuves, extensions, réhabilitations ou bâtiments professionnels : chaque mission peut aller de la conception seule au suivi complet du chantier.</p>
+            <div className="actions">
+              <Link className="btn btn--secondary" href="/contact">Parler de mon projet <Arrow /></Link>
             </div>
-            <div className="hero-actions">
-              <Link className="btn btn--emerald" href="/contact">Parlons de votre projet <Arrow /></Link>
-              <Link className="btn btn--ghost" href="/projets">Voir les réalisations</Link>
+          </div>
+          <ExpertiseList />
+        </div>
+      </section>
+
+      <section className="section section--mineral" id="engagements" aria-labelledby="engagements-title">
+        <div className="container">
+          <div className="section-head">
+            <div className="stack">
+              <span className="eyebrow">Nos engagements</span>
+              <h2 className="h2" id="engagements-title">Une architecture pensée dans sa globalité.</h2>
             </div>
+            <p>Construire engage votre budget, votre temps et votre cadre de vie. Voici ce sur quoi repose chaque projet de l&apos;agence.</p>
+          </div>
+          <Engagements />
+          <div className="section-foot">
+            <Link className="btn" href="/contact">Échanger sur mon projet <Arrow /></Link>
+            <Link className="link-arrow" href="/approche">Découvrir notre approche <Arrow /></Link>
           </div>
         </div>
       </section>
 
-      <Audiences />
-
-      <section className="section" id="agence" aria-labelledby="agence-title" style={{ paddingTop: "clamp(48px,6vw,96px)" }}>
-        <div className="container intro-grid">
-          <aside className="intro-aside reveal">
+      <section className="section" id="agence" aria-labelledby="agence-title">
+        <div className="container comp-split comp-split--center">
+          <figure style={{ margin: 0 }}>
             <div className="figure-stack">
-              <ProjectImg slug="villa-l" num="14" alt="Chantier de la villa L : pose de la charpente" className="reveal-img" />
-              <ProjectImg slug="villa-l" num="01" alt="Villa L livrée, Prades-le-Lez" className="reveal-img d2" />
-              <span className="figure-tag">Du plan au chantier</span>
+              <ProjectImg slug="villa-l" num="14" alt="Chantier de la villa L : pose de la charpente" />
+              <ProjectImg slug="villa-l" num="01" alt="La villa L livrée, à Prades-le-Lez" />
             </div>
-          </aside>
-          <div className="intro-text">
-            <span className="eyebrow reveal"><span className="section-num">01</span> L&apos;architecte</span>
-            <h2 className="h2 reveal" id="agence-title" style={{ marginTop: 18 }}>Concepteur <em className="accent">et</em> constructeur.</h2>
-            <p className="lead reveal">Vous arrivez avec des envies, parfois quelques idées, parfois simplement un terrain. Notre rôle est d&apos;en faire un projet cohérent avec votre mode de vie, votre budget et les contraintes du site — puis de le mener jusqu&apos;au bout.</p>
-            <p className="reveal muted">Diplômé de l&apos;École d&apos;Architecture de Montpellier et titulaire d&apos;un DUT Génie civil, Jean-Yves Millet exerce sur le secteur montpelliérain depuis 1999. Ancien directeur technique d&apos;un promoteur, il a mené de nombreux programmes immobiliers et plus d&apos;une centaine de maisons individuelles.</p>
-            <p className="reveal muted">Cette double culture change concrètement votre projet : des plans qui anticipent la structure, le terrain et la mise en œuvre ; des chiffrages réalistes ; des entreprises consultées sur un dossier précis ; un chantier suivi par celui qui l&apos;a dessiné. Avec, toujours, la même ambition : faire de votre projet, pourquoi pas, <em>la maison du bonheur</em>.</p>
-            <div className="signature reveal">
-              <span className="signature-mono">JYM</span>
+            <figcaption className="figure-caption">Villa L, Prades-le-Lez : du chantier à la livraison.</figcaption>
+          </figure>
+          <div className="stack">
+            <span className="eyebrow">L&apos;agence</span>
+            <h2 className="h2" id="agence-title">Jean-Yves Millet, architecte à Montarnaud depuis 1999.</h2>
+            <p className="lead">Diplômé de l&apos;École d&apos;Architecture de Montpellier et titulaire d&apos;un DUT Génie civil, Jean-Yves Millet dessine en sachant comment le bâtiment sera construit.</p>
+            <p className="muted">Ancien directeur technique d&apos;un promoteur, il a mené des programmes immobiliers et conçu plus d&apos;une centaine de maisons individuelles, des bureaux et des réhabilitations.</p>
+            <div className="signature">
               <div><strong>Jean-Yves Millet</strong><span>Architecte DPLG · DUT Génie civil</span></div>
-              <Link className="link-underline" href="/agence" style={{ marginLeft: "auto" }}>Son parcours <Arrow /></Link>
+              <Link className="link-arrow" href="/agence">Découvrir l&apos;agence <Arrow /></Link>
             </div>
           </div>
         </div>
-        <div className="container" style={{ marginTop: "clamp(64px,8vw,120px)" }}><Stats /></div>
+        <div className="container" style={{ marginTop: "var(--space-xl)" }}><Stats /></div>
       </section>
 
-      <div className="marquee" aria-hidden="true">
-        <div className="marquee-track">{[...words, ...words].map((w, i) => <span key={i}>{w}</span>)}</div>
-      </div>
-
-      <section className="section section--dark on-dark" id="pourquoi" aria-labelledby="pourquoi-title">
+      <section className="section section--flush-top" id="realisations" aria-labelledby="real-title">
         <div className="container">
           <div className="section-head">
-            <div className="reveal"><span className="eyebrow"><span className="section-num">02</span> Pourquoi Volum</span><h2 className="h2" id="pourquoi-title">Ce qui <em className="accent">sécurise</em><br />votre projet.</h2></div>
-            <p className="muted reveal d1">Construire engage beaucoup : votre budget, votre temps, votre cadre de vie. Voici ce que nous mettons en place pour que votre projet se concrétise comme prévu — et ce qu&apos;en disent nos clients.</p>
-          </div>
-          <Arguments />
-        </div>
-      </section>
-
-      <section className="section" id="realisations" aria-labelledby="real-title">
-        <div className="container">
-          <div className="section-head">
-            <div className="reveal"><span className="eyebrow"><span className="section-num">03</span> Réalisations</span><h2 className="h2" id="real-title">Projets <em className="accent">livrés</em>.</h2></div>
-            <div className="reveal d1" style={{ justifySelf: "end", display: "grid", gap: 24, maxWidth: 520 }}>
-              <p className="muted" style={{ margin: 0 }}>Maisons contemporaines, extensions, réhabilitations de mas, sièges d&apos;entreprise : des projets suivis de l&apos;esquisse au chantier, dans l&apos;Hérault et le Gard.</p>
-              <Link className="link-underline" href="/projets">Voir les {PROJECTS.length} projets <Arrow /></Link>
+            <div className="stack">
+              <span className="eyebrow">Réalisations</span>
+              <h2 className="h2" id="real-title">Projets livrés.</h2>
             </div>
+            <p>Maisons contemporaines, extensions, réhabilitations de mas et sièges d&apos;entreprise, dans l&apos;Hérault et le Gard.</p>
           </div>
           <div className="projects-grid projects-grid--featured">
             {FEATURED.map((s) => { const p = getProject(s)!; return <ProjectCard key={s} p={p} />; })}
           </div>
-          <div style={{ display: "flex", justifyContent: "center", marginTop: "clamp(48px,6vw,96px)" }}>
-            <Link className="btn" href="/projets">Toutes les réalisations <Arrow /></Link>
+          <div className="section-foot">
+            <Link className="btn btn--secondary" href="/projets">Voir les {PROJECTS.length} réalisations <Arrow /></Link>
           </div>
         </div>
       </section>
 
-      <section className="section section--cream" id="methode" aria-labelledby="methode-title">
+      <section className="section section--mineral" id="methode" aria-labelledby="methode-title">
         <div className="container">
           <div className="section-head">
-            <div className="reveal"><span className="eyebrow"><span className="section-num">04</span> Méthode</span><h2 className="h2" id="methode-title">De votre idée<br />à la <em className="accent">remise des clés</em>.</h2></div>
-            <p className="muted reveal d1">Sept étapes claires, ponctuées d&apos;échanges réguliers. Vous gardez la main sur les décisions ; nous prenons en charge la technique, les démarches et la coordination des entreprises.</p>
+            <div className="stack">
+              <span className="eyebrow">Notre approche</span>
+              <h2 className="h2" id="methode-title">De la première idée à la réalisation.</h2>
+            </div>
+            <p>Cinq étapes, ponctuées d&apos;échanges réguliers. Vous gardez la main sur les décisions ; l&apos;agence prend en charge la technique, les démarches et la coordination.</p>
           </div>
           <Steps />
+          <div className="section-foot">
+            <Link className="btn" href="/contact">Parler de mon projet <Arrow /></Link>
+            <Link className="link-arrow" href="/approche">Découvrir notre approche <Arrow /></Link>
+          </div>
         </div>
       </section>
 
-      <Budget />
       <ReviewsSection />
-      <Faq />
-      <Zone />
-      <ContactSection />
+      <Faq mineral />
+      <ContactSection mineral={false} />
     </>
   );
 }

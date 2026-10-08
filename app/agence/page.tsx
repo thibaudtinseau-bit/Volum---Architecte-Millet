@@ -1,28 +1,28 @@
 import type { Metadata } from "next";
-import { Icon } from "@/components/Icons";
+import Link from "next/link";
+import { Arrow } from "@/components/Icons";
 import { ProjectImg } from "@/components/ProjectImg";
-import { Breadcrumb, Cta, Services, Stats, Zone } from "@/components/Sections";
+import { Breadcrumb, Cta, Stats } from "@/components/Sections";
 
 export const metadata: Metadata = {
-  title: "L'agence — Jean-Yves Millet, architecte DPLG",
-  description: "Jean-Yves Millet, architecte DPLG et technicien du génie civil : parcours, approche et expertises. Une architecture dessinée pour être construite, à Montpellier et dans l'Hérault depuis 1999.",
+  title: "L'agence — Jean-Yves Millet, architecte DPLG à Montarnaud",
+  description: "Volum, l'agence de Jean-Yves Millet, architecte DPLG et titulaire d'un DUT Génie civil, installée à Montarnaud près de Montpellier depuis 1999 : vision, parcours et engagement.",
   alternates: { canonical: "/agence" },
 };
 
-const VALUES: [string, string, string][] = [
-  ["ear", "Comprendre", "Vos envies, votre mode de vie, votre budget, votre terrain : tout commence par un vrai dialogue, avant le premier trait."],
-  ["ruler", "Anticiper", "La culture du génie civil permet d'intégrer dès la conception la structure, le sol et la mise en œuvre. Les mauvaises surprises se règlent sur plan, pas sur le chantier."],
-  ["leaf", "Durer", "Orientation, inertie, matériaux, énergie : des bâtiments sobres et confortables, performants (RE2020 pour le neuf), pensés pour bien vieillir."],
-  ["shield", "Accompagner", "Un seul interlocuteur, de la première esquisse à la réception des travaux. Celui qui a dessiné votre projet est aussi celui qui le suit sur le chantier."],
+const PILLARS: [string, string][] = [
+  ["La vision", "Un projet part d'un lieu et de ceux qui vont l'habiter. Orientation, lumière, vues, usages : la forme découle de ces données plutôt que d'un style imposé. Éco-conception, technologies nouvelles et façons de vivre orientent chaque réponse."],
+  ["L'expertise", "Une formation d'architecte complétée par un DUT Génie civil, puis une expérience de directeur technique chez un promoteur. Les questions de structure, de terrain et de mise en œuvre sont traitées directement, dès les premiers plans."],
+  ["L'engagement", "Un interlocuteur unique, de la première esquisse à la réception des travaux lorsque la mission le prévoit. Budget, matériaux, arbitrages : les décisions importantes sont prises avec vous, avant le chantier."],
 ];
 
 const TIMELINE: [string, string, string][] = [
-  ["Formation", "DUT Génie civil", "Une première formation technique qui ancre durablement le goût du chantier, des structures et de la construction."],
+  ["Formation", "DUT Génie civil", "Une première formation technique, tournée vers les structures et la construction."],
   ["Diplôme", "Architecte DPLG", "Diplômé par le gouvernement de l'École d'Architecture de Montpellier."],
   ["1999", "Création de l'agence", "Installation en libéral sur le secteur montpelliérain, sous le nom Volum architecture."],
-  ["2000 →", "Programmes immobiliers", "Directeur technique de la société MV Promotion en parallèle de l'activité libérale : conduite de programmes de logements collectifs."],
-  ["2013", "Innovation", "Développement du concept Cassine, module d'habitat circulaire en bois breveté par l'agence."],
-  ["Aujourd'hui", "Plus de 100 maisons", "Une centaine de logements individuels, des bureaux, des réhabilitations, et toujours la même exigence."],
+  ["Début des années 2000", "Programmes immobiliers", "Directeur technique de la société MV Promotion, en parallèle de l'activité libérale : conduite de programmes de logements collectifs."],
+  ["2013", "Concept Cassine", "Développement d'un module d'habitat circulaire en bois, breveté par l'agence."],
+  ["Aujourd'hui", "Plus de 100 maisons", "Une centaine de maisons individuelles, des bureaux et des réhabilitations dans l'Hérault et le Gard."],
 ];
 
 export default function Agence() {
@@ -32,77 +32,84 @@ export default function Agence() {
         <div className="container">
           <Breadcrumb items={[["Accueil", "/"], ["L'agence"]]} />
           <div className="page-hero-grid">
-            <h1 className="display reveal">L&apos;architecte <em className="accent">et</em> le constructeur.</h1>
-            <p className="lead reveal d1">Volum, c&apos;est l&apos;agence de Jean-Yves Millet : architecte DPLG, technicien du génie civil, installé à Montarnaud, aux portes de Montpellier, depuis 1999.</p>
+            <div className="stack">
+              <span className="eyebrow">L&apos;agence</span>
+              <h1 className="display">Une vision de l&apos;architecture, une exigence de construction.</h1>
+            </div>
+            <p className="lead">Fondée autour de l&apos;expérience de Jean-Yves Millet, VOLUM développe une architecture attentive aux lieux, aux usages et aux réalités de la construction.</p>
           </div>
         </div>
       </section>
 
-      <section className="section--tight" style={{ paddingTop: 0 }}>
-        <div className="container">
-          <div className="split-media reveal-img" style={{ aspectRatio: "21/9" }}>
-            <ProjectImg slug="villa-cetd" num="06" alt="Villa C&D, Pignan" priority sizes="100vw" />
-          </div>
+      <div className="container">
+        <div className="split-media" style={{ aspectRatio: "21 / 9" }}>
+          <ProjectImg slug="villa-cetd" num="06" alt="Villa C&D, Pignan" priority sizes="100vw" />
         </div>
-      </section>
+      </div>
 
-      <section className="section">
-        <div className="container split">
-          <div>
-            <span className="eyebrow reveal">Jean-Yves Millet</span>
-            <h2 className="h2 reveal" style={{ margin: "18px 0 32px" }}>Dessiner en sachant <em className="accent">comment construire</em>.</h2>
-            <p className="lead reveal">Diplômé de l&apos;École d&apos;Architecture de Montpellier et titulaire d&apos;un DUT en Génie civil, Jean-Yves Millet allie la sensibilité du concepteur à la rigueur du technicien.</p>
-            <p className="muted reveal">Cette double compétence lui confère une forte appétence tant pour la conception architecturale que pour le suivi technique sur le terrain. Actif sur le secteur montpelliérain depuis 1999, il a notamment exercé les fonctions de directeur technique pour la société MV Promotion au début des années 2000, parallèlement à son activité libérale.</p>
-            <p className="muted reveal">Son activité est généraliste et se répartit principalement entre le logement individuel et collectif — environ 60 % — et les bâtiments d&apos;activité comme les bureaux — environ 30 %. Il compte à son actif plusieurs programmes immobiliers complexes et plus d&apos;une centaine de maisons individuelles.</p>
-            <ul className="checklist reveal">
+      <section className="section" aria-labelledby="portrait-title">
+        <div className="container comp-split comp-split--center">
+          <div className="split-media"><ProjectImg slug="villa-l" num="01" alt="Villa L, Prades-le-Lez" sizes="(max-width: 900px) 100vw, 40vw" /></div>
+          <div className="stack">
+            <span className="eyebrow">Jean-Yves Millet</span>
+            <h2 className="h2" id="portrait-title">Dessiner en sachant comment construire.</h2>
+            <p className="lead">Architecte DPLG et titulaire d&apos;un DUT Génie civil, Jean-Yves Millet associe une approche sensible de la conception à une connaissance concrète des contraintes techniques du bâtiment.</p>
+            <p className="muted">Cette double culture nourrit chaque projet, depuis les premières intentions architecturales jusqu&apos;à sa réalisation. Son activité se partage entre le logement, pour environ 60 %, et les bâtiments d&apos;activité et bureaux, pour environ 30 %.</p>
+            <ul className="facts-list">
               <li>Architecte DPLG, inscrit à l&apos;Ordre des architectes</li>
               <li>DUT Génie civil</li>
               <li>Exercice libéral depuis 1999</li>
-              <li>Maisons individuelles, logements collectifs, bureaux, ERP</li>
+              <li>Maisons individuelles, logements collectifs, bureaux, établissements recevant du public</li>
             </ul>
           </div>
-          <div className="split-media reveal-img"><ProjectImg slug="villa-l" num="01" alt="Villa L, Prades-le-Lez" /></div>
         </div>
       </section>
 
-      <section className="section section--cream">
+      <section className="section section--mineral" aria-labelledby="approche-title">
         <div className="container">
           <div className="section-head">
-            <div className="reveal"><span className="eyebrow">Approche</span><h2 className="h2">Quatre engagements, <em className="accent">chaque projet</em>.</h2></div>
-            <p className="muted reveal d1">Technologies nouvelles, éco-sensibilité, typologie et concept de vie : autant de questions qui orientent chaque projet vers une réponse juste — et constructible.</p>
+            <div className="stack">
+              <span className="eyebrow">Une façon de travailler</span>
+              <h2 className="h2" id="approche-title">Vision, expertise, engagement.</h2>
+            </div>
+            <p>Trois repères qui guident l&apos;agence, du premier rendez-vous à la remise des clés.</p>
           </div>
-          <div className="values">
-            {VALUES.map(([ic, t, d], i) => (
-              <article className={`value reveal d${i}`} key={t}><Icon name={ic} className="" /><h3>{t}</h3><p>{d}</p></article>
+          <ol className="numbered numbered--3">
+            {PILLARS.map(([t, d], i) => (
+              <li key={t}>
+                <span className="num" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
+                <h3>{t}</h3>
+                <p>{d}</p>
+              </li>
             ))}
+          </ol>
+          <div className="section-foot">
+            <Link className="link-arrow" href="/approche">Voir les étapes d&apos;un projet <Arrow /></Link>
+            <Link className="link-arrow" href="/expertises">Découvrir les expertises <Arrow /></Link>
           </div>
         </div>
       </section>
 
-      <section className="section section--dark on-dark" id="expertises" aria-labelledby="expertises-title">
-        <div className="container">
-          <div className="section-head">
-            <div className="reveal"><span className="eyebrow">Expertises</span><h2 className="h2" id="expertises-title">Du logement <em className="accent">au tertiaire</em>.</h2></div>
-            <p className="muted reveal d1">Environ 60 % de l&apos;activité concerne le logement individuel et collectif, 30 % les bâtiments d&apos;activité et les bureaux. Les missions vont de la simple conception jusqu&apos;à la maîtrise d&apos;œuvre complète.</p>
+      <section className="section" aria-labelledby="parcours-title">
+        <div className="container comp-split">
+          <div className="stack sticky">
+            <span className="eyebrow">Parcours</span>
+            <h2 className="h2" id="parcours-title">Plus de 25 ans d&apos;architecture autour de Montpellier.</h2>
           </div>
-          <Services />
-        </div>
-      </section>
-
-      <section className="section section--emerald on-dark">
-        <div className="container intro-grid">
-          <div className="reveal"><span className="eyebrow">Parcours</span><h2 className="h2" style={{ marginTop: 18 }}>Plus de 25 ans<br />d&apos;<em className="accent">architecture</em>.</h2></div>
-          <div className="timeline">
+          <ol className="timeline">
             {TIMELINE.map(([y, t, d]) => (
-              <div className="tl-item reveal" key={t}><div className="tl-year">{y}</div><div><h3>{t}</h3><p>{d}</p></div></div>
+              <li key={t}>
+                <span className="num">{y}</span>
+                <h3>{t}</h3>
+                <p>{d}</p>
+              </li>
             ))}
-          </div>
+          </ol>
         </div>
-        <div className="container" style={{ marginTop: "clamp(64px,8vw,120px)" }}><Stats /></div>
+        <div className="container" style={{ marginTop: "var(--space-xl)" }}><Stats /></div>
       </section>
 
-      <Zone />
-      <Cta />
+      <Cta title="Envie d'échanger sur votre projet ?" secondary={{ href: "/approche", label: "Découvrir notre approche" }} />
     </>
   );
 }

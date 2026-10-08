@@ -8,8 +8,8 @@ export const SITE = {
   fullName: "Volum — Jean-Yves Millet, Architecte DPLG",
   url: (process.env.NEXT_PUBLIC_SITE_URL || "https://volum-architecte-millet.vercel.app").replace(/\/$/, ""),
   description:
-    "Volum, Jean-Yves Millet, architecte DPLG et technicien du génie civil à Montarnaud (Hérault). " +
-    "Une architecture dessinée pour être construite : maisons, extensions, rénovations et bureaux autour de Montpellier depuis 1999.",
+    "Volum, agence de Jean-Yves Millet, architecte DPLG à Montarnaud : construction de maisons, extensions, rénovations " +
+    "et bâtiments professionnels à Montpellier et dans l'Hérault, de la conception au suivi de chantier, depuis 1999.",
   phone: "06 71 06 87 16",
   phoneLink: "+33671068716",
   email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "",
@@ -233,6 +233,7 @@ export const COMMUNES = [
   "Lavérune", "Castelnau-le-Lez", "Teyran", "Clermont-l'Hérault", "Lodève", "Lac du Salagou", "Bellegarde (30)", "Rousson (30)",
 ];
 
+/** Missions transversales (page Expertises). */
 export const SERVICES: [string, string, string][] = [
   ["house", "Maison d'architecte", "Construction neuve sur mesure : une maison pensée pour votre terrain, votre mode de vie et votre budget."],
   ["extend", "Extension & surélévation", "Agrandir, surélever, ouvrir : faire évoluer votre maison sans en trahir l'esprit."],
@@ -245,76 +246,77 @@ export const SERVICES: [string, string, string][] = [
   ["leaf", "Éco-conception", "Bioclimatisme, matériaux sains, performance énergétique (RE2020) et technologies nouvelles."],
 ];
 
+/** Parcours d'un projet (accueil + page « Notre approche »). [titre, repère, texte] */
 export const STEPS: [string, string, string][] = [
-  ["Écoute & programme", "Premier rendez-vous", "Une discussion pour cerner vos besoins, vos aspirations, votre budget et votre calendrier. Visite du terrain ou du bâti existant, analyse des règles d'urbanisme (PLU)."],
-  ["Esquisse", "Premières intentions", "Les premières idées prennent forme : implantation, volumes, organisation des espaces. Plusieurs pistes sont explorées et discutées ensemble."],
-  ["Avant-projet", "APS · APD", "Le projet s'affine : plans, façades, matériaux, perspectives 3D et première estimation du coût des travaux."],
-  ["Permis de construire", "Autorisations", "Constitution et dépôt du dossier de permis de construire ou de déclaration préalable, suivi de l'instruction auprès de la mairie."],
-  ["Études & consultation", "PRO · DCE · ACT", "Plans d'exécution, descriptifs techniques, consultation des entreprises et analyse comparative des devis."],
-  ["Chantier", "Direction des travaux", "Réunions de chantier hebdomadaires, contrôle de la qualité d'exécution, suivi des coûts et des délais. Une double compétence architecte / génie civil sur le terrain."],
-  ["Réception", "Livraison", "Assistance aux opérations de réception, levée des réserves et remise des clés. Bienvenue chez vous."],
+  ["Échanger et comprendre", "Premier rendez-vous", "Nous prenons le temps de comprendre vos attentes, votre mode de vie, votre terrain et votre budget afin de définir les bases du projet."],
+  ["Concevoir", "Esquisse · avant-projet", "Nous imaginons une réponse architecturale adaptée à vos besoins et à votre environnement, en intégrant les contraintes techniques et réglementaires."],
+  ["Définir et préparer", "Permis · études · consultation", "Nous précisons les choix architecturaux et techniques, préparons les documents nécessaires et organisons les consultations selon la mission confiée."],
+  ["Accompagner les travaux", "Direction de chantier", "Lorsque notre mission comprend le suivi de chantier, nous coordonnons les intervenants et veillons à la bonne réalisation du projet."],
+  ["Finaliser", "Réception", "Nous vous accompagnons dans les dernières étapes du projet et, selon la mission prévue, jusqu'à la réception des travaux."],
 ];
 
 export const FAQ: [string, string][] = [
-  ["Mon projet n'est pas encore très défini. Est-ce trop tôt pour vous appeler ?", "Non, c'est même le bon moment. Terrain identifié, maison à transformer ou simple réflexion : le premier rendez-vous sert justement à vérifier la faisabilité du projet, les contraintes du site et du PLU, et l'enveloppe à prévoir. Plus l'architecte intervient tôt, plus on évite les mauvaises décisions coûteuses."],
-  ["Comment éviter de dépasser mon budget ?", "Le budget est fixé avec vous dès le départ et sert de cadre à la conception. Une première estimation est faite à l'avant-projet, puis affinée à mesure que les plans se précisent. Les entreprises sont consultées sur un dossier détaillé et leurs devis sont comparés poste par poste. Si des arbitrages sont nécessaires, ils sont faits avec vous, avant le chantier, pas pendant."],
-  ["Combien coûte un architecte ?", "Les honoraires dépendent de l'étendue de la mission (conception seule, permis de construire, ou mission complète jusqu'à la réception) et de la complexité du projet. Ils sont fixés dans un contrat clair, établi après le premier rendez-vous, avant tout engagement de votre part."],
-  ["Qui gère les artisans et le chantier ?", "Dans le cadre d'une mission complète, l'agence consulte les entreprises, vous aide à les choisir, puis dirige le chantier : réunions régulières, contrôle de la qualité d'exécution, suivi des coûts et du planning. Vous avez un seul interlocuteur, qui connaît le projet depuis la première esquisse."],
-  ["Que se passe-t-il en cas d'imprévu sur le chantier ?", "Les imprévus sont traités sur place, avec les entreprises, et vous êtes informé des solutions et de leur éventuel impact avant toute décision. La formation en génie civil de Jean-Yves Millet est ici un atout : les questions de structure, de terrain ou de mise en œuvre sont analysées directement."],
-  ["Combien de temps faut-il prévoir ?", "Cela dépend du projet, mais quelques repères : les études et le dossier de permis prennent généralement quelques mois ; l'instruction du permis de construire est de 2 mois pour une maison individuelle (3 mois dans les autres cas, davantage en secteur protégé) ; viennent ensuite la consultation des entreprises, puis le chantier. Un calendrier prévisionnel vous est remis dès l'avant-projet."],
-  ["Le recours à un architecte est-il obligatoire ?", "Oui pour toute construction dont la surface de plancher dépasse 150 m², pour une extension qui porte l'ensemble au-delà de ce seuil, et pour la plupart des bâtiments professionnels. En dessous, faire appel à un architecte reste le meilleur moyen d'obtenir un projet bien conçu et maîtrisé dans son budget."],
-  ["Dans quel secteur intervenez-vous ?", "Principalement à Montpellier et dans l'Hérault (Grand Pic Saint-Loup, vallée de l'Hérault, Lodévois), ainsi que dans le Gard pour certains projets."],
+  ["Mon projet n'est pas encore très défini. Est-ce trop tôt pour vous appeler ?", "Non, c'est même le bon moment. Terrain identifié, maison à transformer ou simple réflexion : le premier rendez-vous sert justement à vérifier la faisabilité du projet, les contraintes du site et du PLU, et l'enveloppe à prévoir. Plus l'architecte intervient tôt, plus on évite les mauvaises décisions coûteuses."],
+  ["Comment éviter de dépasser mon budget ?", "Le budget est fixé avec vous dès le départ et sert de cadre à la conception. Une première estimation est faite à l'avant-projet, puis affinée à mesure que les plans se précisent. Les entreprises sont consultées sur un dossier détaillé et leurs devis sont comparés poste par poste. Si des arbitrages sont nécessaires, ils sont faits avec vous, avant le chantier, pas pendant."],
+  ["Combien coûte un architecte ?", "Les honoraires dépendent de l'étendue de la mission (conception seule, permis de construire, ou mission complète jusqu'à la réception) et de la complexité du projet. Ils sont fixés dans un contrat clair, établi après le premier rendez-vous, avant tout engagement de votre part."],
+  ["Qui gère les artisans et le chantier ?", "Dans le cadre d'une mission complète, l'agence consulte les entreprises, vous aide à les choisir, puis dirige le chantier : réunions régulières, contrôle de la qualité d'exécution, suivi des coûts et du planning. Vous avez un seul interlocuteur, qui connaît le projet depuis la première esquisse."],
+  ["Que se passe-t-il en cas d'imprévu sur le chantier ?", "Les imprévus sont traités sur place, avec les entreprises, et vous êtes informé des solutions et de leur éventuel impact avant toute décision. La formation en génie civil de Jean-Yves Millet est ici un atout : les questions de structure, de terrain ou de mise en œuvre sont analysées directement."],
+  ["Combien de temps faut-il prévoir ?", "Cela dépend du projet, mais quelques repères : les études et le dossier de permis prennent généralement quelques mois ; l'instruction du permis de construire est de 2 mois pour une maison individuelle (3 mois dans les autres cas, davantage en secteur protégé) ; viennent ensuite la consultation des entreprises, puis le chantier. Un calendrier prévisionnel vous est remis dès l'avant-projet."],
+  ["Le recours à un architecte est-il obligatoire ?", "Oui pour toute construction dont la surface de plancher dépasse 150 m², pour une extension qui porte l'ensemble au-delà de ce seuil, et pour la plupart des bâtiments professionnels. En dessous, faire appel à un architecte reste le meilleur moyen d'obtenir un projet bien conçu et maîtrisé dans son budget."],
+  ["Dans quel secteur intervenez-vous ?", "Principalement à Montpellier et dans l'Hérault (Grand Pic Saint-Loup, vallée de l'Hérault, Lodévois), ainsi que dans le Gard pour certains projets."],
 ];
 
 /* ---------- Positionnement ---------- */
-export const AUDIENCES = [
-  {
-    key: "particulier",
-    eyebrow: "Particuliers",
-    title: "Vous avez un terrain ou une maison à transformer",
-    intro: "Construire votre maison, l'agrandir, ou redonner vie à un bâti ancien.",
-    items: [
-      { label: "Maison neuve", href: "/contact?projet=maison" },
-      { label: "Extension & surélévation", href: "/contact?projet=extension" },
-      { label: "Rénovation & réhabilitation", href: "/contact?projet=renovation" },
-    ],
-    cover: ["villa-g", "06"] as [string, string],
-  },
-  {
-    key: "professionnel",
-    eyebrow: "Professionnels",
-    title: "Vous avez besoin de locaux à votre image",
-    intro: "Entreprises, professions libérales, investisseurs : des bâtiments fonctionnels, conformes et maîtrisés.",
-    items: [
-      { label: "Bureaux & sièges sociaux", href: "/contact?projet=tertiaire" },
-      { label: "Locaux d'activité", href: "/contact?projet=tertiaire" },
-      { label: "ERP & programmes immobiliers", href: "/contact?projet=tertiaire" },
-    ],
-    cover: ["siege-social-o", "04"] as [string, string],
-  },
+/** Les quatre engagements (accueil). */
+export const ENGAGEMENTS: [string, string][] = [
+  ["Une conception sur mesure", "Chaque projet naît d'un lieu, d'un mode de vie et d'aspirations singulières. Nous concevons des espaces adaptés à vos usages, à votre environnement et à vos envies."],
+  ["Une expertise technique intégrée", "Notre double compétence en architecture et en génie civil permet d'anticiper les contraintes constructives dès les premières esquisses."],
+  ["Une attention constante au budget", "Les choix architecturaux et techniques sont étudiés en tenant compte de vos objectifs financiers, afin de construire un projet cohérent et réaliste."],
+  ["Un accompagnement de bout en bout", "De la conception au suivi des travaux, selon la mission confiée, nous assurons la continuité du projet et vous accompagnons dans les décisions essentielles."],
 ];
 
-/** Pourquoi Volum : chaque argument est appuyé par un avis client réel (voir lib/reviews-data.ts). */
-export const ARGUMENTS: { title: string; text: string; quote?: { text: string; author: string } }[] = [
+/** Les quatre expertises (accueil, page Expertises, menu). `projet` pré-remplit le formulaire de contact. */
+export type Expertise = { id: string; projet: string; title: string; short: string; text: string[]; points: string[]; refs: string[] };
+export const EXPERTISES: Expertise[] = [
   {
-    title: "Des plans pensés pour le chantier",
-    text: "Architecte DPLG et technicien du génie civil, Jean-Yves Millet dessine en sachant comment le bâtiment sera construit : structure, terrain, mise en œuvre. Moins de surprises et moins d'adaptations coûteuses en cours de route.",
-    quote: { text: "Le suivi des travaux a toujours été très rigoureux.", author: "Michèle Delmaux" },
+    id: "maison", projet: "maison", title: "Construction de maison",
+    short: "Une maison neuve pensée pour votre terrain, votre mode de vie et votre budget.",
+    text: [
+      "Implantation, orientation, volumes, lumière : la maison se dessine à partir du terrain et de la façon dont vous souhaitez y vivre.",
+      "Les choix structurels et constructifs sont posés dès l'esquisse, pour que le projet dessiné soit aussi un projet réalisable dans l'enveloppe prévue.",
+    ],
+    points: ["Esquisse et perspectives 3D", "Dossier de permis de construire", "Piscine et aménagements extérieurs", "Suivi de chantier selon la mission"],
+    refs: ["villa-cetd", "villa-vc", "villa-g"],
   },
   {
-    title: "Un budget tenu, étape par étape",
-    text: "Votre enveloppe est le cadre du projet dès le premier rendez-vous. Elle est vérifiée à chaque phase, et les devis des entreprises sont comparés poste par poste avant que vous ne vous engagiez.",
-    quote: { text: "Les devis ont toujours été respectés.", author: "Michèle Delmaux" },
+    id: "extension", projet: "extension", title: "Extension et surélévation",
+    short: "Agrandir, surélever ou ouvrir une maison sans en trahir l'esprit.",
+    text: [
+      "Une extension réussie prolonge la maison existante : elle en respecte l'échelle, en corrige parfois les défauts et crée de nouveaux usages.",
+      "Reprise de structure, raccord des toitures, démarches d'urbanisme : les points délicats sont traités en amont, sur plan.",
+    ],
+    points: ["Relevé et diagnostic de l'existant", "Permis de construire ou déclaration préalable", "Plans d'exécution", "Coordination des entreprises"],
+    refs: ["extension-b"],
   },
   {
-    title: "Vos envies, traduites en projet",
-    text: "Vous arrivez avec des envies, parfois quelques idées, parfois simplement un terrain. Le rôle de l'architecte est d'en faire un projet cohérent avec votre mode de vie, votre budget et les contraintes du site.",
-    quote: { text: "Sa capacité d'écoute et de compréhension lui a permis de traduire nos envies en un beau projet, cohérent et en ligne avec notre budget.", author: "Antonio Gutierrez" },
+    id: "renovation", projet: "renovation", title: "Rénovation et réhabilitation",
+    short: "Mas, bergeries, bâti ancien : conserver le caractère, apporter le confort d'aujourd'hui.",
+    text: [
+      "Le bâti ancien impose d'abord de l'observer : murs, charpente, ouvertures, ce qui peut être conservé et ce qui doit évoluer.",
+      "Les intérieurs sont ensuite repensés pour la vie actuelle, avec une attention particulière aux matériaux et à la performance énergétique.",
+    ],
+    points: ["Réhabilitation lourde ou partielle", "Aménagement intérieur", "Choix des matériaux", "Amélioration énergétique"],
+    refs: ["villa-elena", "maison-d-affinage"],
   },
   {
-    title: "Un seul interlocuteur, même pour les dossiers complexes",
-    text: "Permis délicat, terrain en pente, bâti ancien, établissement recevant du public : la même personne suit votre projet de l'esquisse à la remise des clés et coordonne les entreprises sur le chantier.",
-    quote: { text: "Notre dossier était assez complexe et il a toujours fait preuve de beaucoup de patience, de disponibilité et de professionnalisme.", author: "Ibanez Ibanez" },
+    id: "professionnels", projet: "tertiaire", title: "Projets professionnels",
+    short: "Bureaux, sièges sociaux, locaux d'activité et établissements recevant du public.",
+    text: [
+      "Un bâtiment professionnel doit être fonctionnel, conforme et représentatif de l'entreprise qui l'occupe.",
+      "Accessibilité, sécurité incendie, organisation des flux et maîtrise des coûts sont intégrées dès la conception.",
+    ],
+    points: ["Bureaux et sièges sociaux", "Locaux d'activité", "Établissements recevant du public", "Programmes immobiliers"],
+    refs: ["siege-social-o", "siege-social-at", "office-notarial-b"],
   },
 ];
 

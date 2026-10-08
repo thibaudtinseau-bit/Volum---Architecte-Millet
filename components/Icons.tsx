@@ -24,12 +24,6 @@ export function Icon({ name, className = "service-icon" }: { name: string; class
 
 export const Arrow = () => <span className="arrow" aria-hidden="true">→</span>;
 
-export const PhoneIcon = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.6} aria-hidden="true">
-    <path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2" />
-  </svg>
-);
-
 export const GoogleIcon = () => (
   <svg viewBox="0 0 24 24" aria-hidden="true" width="16" height="16">
     <path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.4h6.5a5.6 5.6 0 0 1-2.4 3.6v3h3.9c2.2-2.1 3.5-5.1 3.5-8.7z" />
