@@ -17,7 +17,7 @@ jobs:
         with:
           node-version: 22
       - run: node scripts/sync-reviews.mjs
-      - name: Publier sur main
+      - name: Publier sur la branche principale
         run: |
           git diff --quiet lib/reviews.json && exit 0
           git config user.name "github-actions[bot]"
