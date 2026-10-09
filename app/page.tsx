@@ -31,8 +31,8 @@ export default function Home() {
       <section className="section" id="expertises" aria-labelledby="expertises-title">
         <div className="container comp-split">
           <div className="stack">
-            <span className="eyebrow" data-num="01">Expertises</span>
-            <h2 className="h2" id="expertises-title" data-v3-mark="exigence">Quatre types de projets, une même exigence.</h2>
+            <span className="eyebrow">Expertises</span>
+            <h2 className="h2" id="expertises-title">Quatre types de projets, une même exigence.</h2>
             <p className="muted">Maisons neuves, extensions, réhabilitations ou bâtiments professionnels : chaque mission peut aller de la conception seule au suivi complet du chantier.</p>
             <div className="actions">
               <Link className="btn btn--secondary" href="/contact">Parler de mon projet <Arrow /></Link>
@@ -46,8 +46,8 @@ export default function Home() {
         <div className="container">
           <div className="section-head">
             <div className="stack">
-              <span className="eyebrow" data-num="02">Nos engagements</span>
-              <h2 className="h2" id="engagements-title" data-v3-mark="globalité">Une architecture pensée dans sa globalité.</h2>
+              <span className="eyebrow">Nos engagements</span>
+              <h2 className="h2" id="engagements-title">Une architecture pensée dans sa globalité.</h2>
             </div>
             <p>Construire engage votre budget, votre temps et votre cadre de vie. Voici ce sur quoi repose chaque projet de l&apos;agence.</p>
           </div>
@@ -69,7 +69,7 @@ export default function Home() {
             <figcaption className="figure-caption">Villa L, Prades-le-Lez : du chantier à la livraison.</figcaption>
           </figure>
           <div className="stack">
-            <span className="eyebrow" data-num="03">L&apos;agence</span>
+            <span className="eyebrow">L&apos;agence</span>
             <h2 className="h2" id="agence-title">Jean-Yves Millet, architecte à Montarnaud depuis 1999.</h2>
             <p className="lead">Diplômé de l&apos;École d&apos;Architecture de Montpellier et titulaire d&apos;un DUT Génie civil, Jean-Yves Millet dessine en sachant comment le bâtiment sera construit.</p>
             <p className="muted">Ancien directeur technique d&apos;un promoteur, il a mené des programmes immobiliers et conçu plus d&apos;une centaine de maisons individuelles, des bureaux et des réhabilitations.</p>
@@ -86,7 +86,7 @@ export default function Home() {
         <div className="container">
           <div className="section-head">
             <div className="stack">
-              <span className="eyebrow" data-num="04">Réalisations</span>
+              <span className="eyebrow">Réalisations</span>
               <h2 className="h2" id="real-title">Projets livrés.</h2>
             </div>
             <p>Maisons contemporaines, extensions, réhabilitations de mas et sièges d&apos;entreprise, dans l&apos;Hérault et le Gard.</p>
@@ -104,7 +104,7 @@ export default function Home() {
         <div className="container">
           <div className="section-head">
             <div className="stack">
-              <span className="eyebrow" data-num="05">Notre approche</span>
+              <span className="eyebrow">Notre approche</span>
               <h2 className="h2" id="methode-title">De la première idée à la réalisation.</h2>
             </div>
             <p>Cinq étapes, ponctuées d&apos;échanges réguliers. Vous gardez la main sur les décisions ; l&apos;agence prend en charge la technique, les démarches et la coordination.</p>

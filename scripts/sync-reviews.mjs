@@ -2,7 +2,7 @@
 // et met à jour la note et le nombre d'avis. Lancé par .github/workflows/sync-reviews.yml.
 import { readFile, writeFile } from "node:fs/promises";
 
-const SITE = process.env.SITE_URL || "https://volum-architecte-millet.vercel.app";
+const SITE = process.env.SITE_URL || "https://www.volum-architecture.fr";
 const FILE = new URL("../lib/reviews.json", import.meta.url);
 
 const res = await fetch(`${SITE}/api/avis`, { headers: { "Cache-Control": "no-cache" } });
