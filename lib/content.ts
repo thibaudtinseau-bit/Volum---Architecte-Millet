@@ -6,7 +6,7 @@ import imagesData from "./images.json";
 export const SITE = {
   name: "Volum",
   fullName: "Volum — Jean-Yves Millet, Architecte DPLG",
-  url: (process.env.NEXT_PUBLIC_SITE_URL || "https://volum-architecte-millet.vercel.app").replace(/\/$/, ""),
+  url: (process.env.NEXT_PUBLIC_SITE_URL || "https://www.volum-architecture.fr").replace(/\/$/, ""),
   description:
     "Volum, agence de Jean-Yves Millet, architecte DPLG à Montarnaud : construction de maisons, extensions, rénovations " +
     "et bâtiments professionnels à Montpellier et dans l'Hérault, de la conception au suivi de chantier, depuis 1999.",

@@ -34,7 +34,7 @@ export default function Agence() {
           <div className="page-hero-grid">
             <div className="stack">
               <span className="eyebrow">L&apos;agence</span>
-              <h1 className="display" data-v3-mark="vision">Une vision de l&apos;architecture, une exigence de construction.</h1>
+              <h1 className="display">Une vision de l&apos;architecture, une exigence de construction.</h1>
             </div>
             <p className="lead">Fondée autour de l&apos;expérience de Jean-Yves Millet, VOLUM développe une architecture attentive aux lieux, aux usages et aux réalités de la construction.</p>
           </div>
@@ -51,7 +51,7 @@ export default function Agence() {
         <div className="container comp-split comp-split--center">
           <div className="split-media"><ProjectImg slug="villa-l" num="01" alt="Villa L, Prades-le-Lez" sizes="(max-width: 900px) 100vw, 40vw" /></div>
           <div className="stack">
-            <span className="eyebrow" data-num="01">Jean-Yves Millet</span>
+            <span className="eyebrow">Jean-Yves Millet</span>
             <h2 className="h2" id="portrait-title">Dessiner en sachant comment construire.</h2>
             <p className="lead">Architecte DPLG et titulaire d&apos;un DUT Génie civil, Jean-Yves Millet associe une approche sensible de la conception à une connaissance concrète des contraintes techniques du bâtiment.</p>
             <p className="muted">Cette double culture nourrit chaque projet, depuis les premières intentions architecturales jusqu&apos;à sa réalisation. Son activité se partage entre le logement, pour environ 60 %, et les bâtiments d&apos;activité et bureaux, pour environ 30 %.</p>
@@ -69,7 +69,7 @@ export default function Agence() {
         <div className="container">
           <div className="section-head">
             <div className="stack">
-              <span className="eyebrow" data-num="02">Une façon de travailler</span>
+              <span className="eyebrow">Une façon de travailler</span>
               <h2 className="h2" id="approche-title">Vision, expertise, engagement.</h2>
             </div>
             <p>Trois repères qui guident l&apos;agence, du premier rendez-vous à la remise des clés.</p>
@@ -93,7 +93,7 @@ export default function Agence() {
       <section className="section" aria-labelledby="parcours-title">
         <div className="container comp-split">
           <div className="stack sticky">
-            <span className="eyebrow" data-num="03">Parcours</span>
+            <span className="eyebrow">Parcours</span>
             <h2 className="h2" id="parcours-title">Plus de 25 ans d&apos;architecture autour de Montpellier.</h2>
           </div>
           <ol className="timeline">
