@@ -57,13 +57,28 @@ const orgLd = {
   aggregateRating: { "@type": "AggregateRating", ratingValue: SAVED_REVIEWS.rating.toFixed(1), reviewCount: SAVED_REVIEWS.count, bestRating: 5 },
 };
 
+const GTM_ID = "GTM-MNSGM26M";
+const GTM_HEAD_SCRIPT = `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','${GTM_ID}');`;
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr" className={`${manrope.variable} ${inter.variable}`} data-design={SERVER_DESIGN} suppressHydrationWarning>
       <head>
+        {/* Google Tag Manager */}
+        <script dangerouslySetInnerHTML={{ __html: GTM_HEAD_SCRIPT }} />
+        {/* End Google Tag Manager */}
         <script dangerouslySetInnerHTML={{ __html: DESIGN_INIT_SCRIPT }} />
       </head>
       <body>
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`} height="0" width="0" style={{ display: "none", visibility: "hidden" }} />
+        </noscript>
+        {/* End Google Tag Manager (noscript) */}
         <a className="skip-link" href="#main">Aller au contenu</a>
         <Header />
         <main id="main">{children}</main>
