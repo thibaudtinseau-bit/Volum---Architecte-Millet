@@ -44,7 +44,7 @@ const orgLd = {
   telephone: "+33 6 71 06 87 16",
   image: `${SITE.url}${imgSrc(HERO_SLIDES[0][0], HERO_SLIDES[0][1])}`,
   logo: `${SITE.url}/logo/volum-logo.png`,
-  founder: { "@type": "Person", name: "Jean-Yves Millet", jobTitle: "Architecte DPLG", alumniOf: "École Nationale Supérieure d'Architecture de Montpellier" },
+  founder: { "@type": "Person", "@id": `${SITE.url}/jean-yves-millet#personne`, url: `${SITE.url}/jean-yves-millet`, name: "Jean-Yves Millet", jobTitle: "Architecte DPLG", alumniOf: "École Nationale Supérieure d'Architecture de Montpellier" },
   address: { "@type": "PostalAddress", streetAddress: SITE.address, postalCode: SITE.zip, addressLocality: SITE.city, addressRegion: "Occitanie", addressCountry: "FR" },
   geo: { "@type": "GeoCoordinates", latitude: SITE.lat, longitude: SITE.lng },
   areaServed: ["Montpellier", "Hérault", "Gard"],

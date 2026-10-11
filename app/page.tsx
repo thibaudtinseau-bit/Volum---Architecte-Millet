@@ -73,7 +73,7 @@ export default function Home() {
             <p className="lead">Diplômé de l&apos;École d&apos;Architecture de Montpellier et titulaire d&apos;un DUT Génie civil, Jean-Yves Millet dessine en sachant comment le bâtiment sera construit.</p>
             <p className="muted">Ancien directeur technique d&apos;un promoteur, il a mené des programmes immobiliers et conçu plus d&apos;une centaine de maisons individuelles, des bureaux et des réhabilitations.</p>
             <div className="signature">
-              <div><strong>Jean-Yves Millet</strong><span>Architecte DPLG · DUT Génie civil</span></div>
+              <div><Link href="/jean-yves-millet"><strong>Jean-Yves Millet</strong></Link><span>Architecte DPLG · DUT Génie civil</span></div>
               <Link className="link-arrow" href="/agence">Découvrir l&apos;agence <Arrow /></Link>
             </div>
           </div>

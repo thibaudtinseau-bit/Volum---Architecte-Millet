@@ -139,6 +139,16 @@ export const COMMUNES = [
   "Lavérune", "Castelnau-le-Lez", "Teyran", "Clermont-l'Hérault", "Lodève", "Lac du Salagou", "Bellegarde (30)", "Rousson (30)",
 ];
 
+/** Parcours de Jean-Yves Millet (pages « L'agence » et « Jean-Yves Millet ») : [repère, titre, texte] */
+export const TIMELINE: [string, string, string][] = [
+  ["Formation", "DUT Génie civil", "Une première formation technique, tournée vers les structures et la construction."],
+  ["Diplôme", "Architecte DPLG", "Diplômé par le gouvernement de l'École d'Architecture de Montpellier."],
+  ["1999", "Création de l'agence", "Installation en libéral sur le secteur montpelliérain, sous le nom Volum architecture."],
+  ["Début des années 2000", "Programmes immobiliers", "Directeur technique de la société MV Promotion, en parallèle de l'activité libérale : conduite de programmes de logements collectifs."],
+  ["2013", "Concept Cassine", "Développement d'un module d'habitat circulaire en bois, breveté par l'agence."],
+  ["Aujourd'hui", "Plus de 100 maisons", "Une centaine de maisons individuelles, des bureaux et des réhabilitations dans l'Hérault et le Gard."],
+];
+
 /** Missions transversales (page Expertises). */
 export const SERVICES: [string, string, string][] = [
   ["house", "Maison d'architecte", "Construction neuve sur mesure : une maison pensée pour votre terrain, votre mode de vie et votre budget."],
