@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Arrow } from "@/components/Icons";
 import { ProjectImg } from "@/components/ProjectImg";
 import { Breadcrumb, Cta, Stats } from "@/components/Sections";
-import { AGENCE_IMAGES, imgAlt } from "@/lib/content";
+import { AGENCE_IMAGES, TIMELINE, imgAlt } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "L'agence — Jean-Yves Millet, architecte DPLG à Montarnaud",
@@ -17,14 +17,6 @@ const PILLARS: [string, string][] = [
   ["L'engagement", "Un interlocuteur unique, de la première esquisse à la réception des travaux lorsque la mission le prévoit. Budget, matériaux, arbitrages : les décisions importantes sont prises avec vous, avant le chantier."],
 ];
 
-const TIMELINE: [string, string, string][] = [
-  ["Formation", "DUT Génie civil", "Une première formation technique, tournée vers les structures et la construction."],
-  ["Diplôme", "Architecte DPLG", "Diplômé par le gouvernement de l'École d'Architecture de Montpellier."],
-  ["1999", "Création de l'agence", "Installation en libéral sur le secteur montpelliérain, sous le nom Volum architecture."],
-  ["Début des années 2000", "Programmes immobiliers", "Directeur technique de la société MV Promotion, en parallèle de l'activité libérale : conduite de programmes de logements collectifs."],
-  ["2013", "Concept Cassine", "Développement d'un module d'habitat circulaire en bois, breveté par l'agence."],
-  ["Aujourd'hui", "Plus de 100 maisons", "Une centaine de maisons individuelles, des bureaux et des réhabilitations dans l'Hérault et le Gard."],
-];
 
 export default function Agence() {
   return (
@@ -62,6 +54,7 @@ export default function Agence() {
               <li>Exercice libéral depuis 1999</li>
               <li>Maisons individuelles, logements collectifs, bureaux, établissements recevant du public</li>
             </ul>
+            <Link className="link-arrow" href="/jean-yves-millet">Découvrir le portrait de Jean-Yves Millet <Arrow /></Link>
           </div>
         </div>
       </section>

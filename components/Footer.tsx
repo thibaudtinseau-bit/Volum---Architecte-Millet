@@ -18,6 +18,7 @@ export function Footer() {
             <ul>
               <li><Link href="/">Accueil</Link></li>
               <li><Link href="/agence">L&apos;agence</Link></li>
+              <li><Link href="/jean-yves-millet">Jean-Yves Millet</Link></li>
               <li><Link href="/expertises">Expertises</Link></li>
               <li><Link href="/projets">Projets</Link></li>
               <li><Link href="/approche">Notre approche</Link></li>
