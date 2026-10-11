@@ -18,17 +18,17 @@ npm run build    # build de production
 | `app/agence/` | Présentation de Jean-Yves Millet : vision, expertise, engagement, parcours |
 | `app/expertises/` | Construction de maison, extension, rénovation, projets professionnels (ancres `#maison`, `#extension`, `#renovation`, `#professionnels`) |
 | `app/approche/` | Les 5 étapes d'un projet, budget, mission |
-| `app/projets/` | Liste filtrable des 15 réalisations |
-| `app/projets/[slug]/` | Page projet (pré-générée), galerie + visionneuse |
+| `app/projets/` | Page « Projets » : les 6 dossiers (logement extérieur, logement intérieur, logements collectifs, tertiaire, industriel & agricole, plans & recherche) |
+| `app/projets/[slug]/` | Page d'un dossier (pré-générée), galerie + visionneuse ; les anciennes URL des 15 projets redirigent vers le dossier correspondant (`next.config.mjs`) |
 | `app/contact/`, `app/mentions-legales/` | Contact, mentions légales & RGPD |
 | `app/api/contact/route.ts` | Envoi du formulaire : e-mail récapitulatif (Gmail SMTP, Resend ou Formspree) |
 | `app/globals.css` | **Design system** (direction artistique V2) : couleurs, typographie (Manrope / Inter), espacements, boutons, formulaires, compositions |
 | `app/sitemap.ts`, `app/robots.ts`, `app/manifest.ts` | SEO |
-| `app/icon.png`, `app/favicon.ico`, `app/apple-icon.png` | Favicon (le « V » du logo) |
-| `lib/content.ts` | **Tous les textes et projets** |
+| `app/icon.png`, `app/favicon.ico`, `app/apple-icon.png` | Favicon (icône « Vθ » du logo 2026) |
+| `lib/content.ts` | **Tous les textes et les 6 dossiers de projets** |
 | `lib/reviews.json` | Avis Google enregistrés (mis à jour automatiquement, voir ci-dessous) |
-| `public/img/projets/` | Photos (WebP 1600 px + 760 px) |
-| `public/logo/` | Logo complet et « V » |
+| `public/img/projets/` | Photos par dossier (WebP 1600 px, 2200 px pour les plans, + 760 px) ; `lib/images.json` donne leur ordre, leurs dimensions et leur texte alternatif |
+| `public/logo/` | Logo 2026 (complet, mot « Volum » clair et sombre) et icônes |
 
 ## Variables d'environnement (Vercel → Settings → Environment Variables)
 Voir `.env.example`.

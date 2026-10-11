@@ -9,7 +9,7 @@ import { Logo } from "./Logo";
 export const NAV = [
   { href: "/agence", label: "L'agence", key: "agence" },
   { href: "/expertises", label: "Expertises", key: "expertises" },
-  { href: "/projets", label: "Réalisations", key: "projets" },
+  { href: "/projets", label: "Projets", key: "projets" },
   { href: "/approche", label: "Notre approche", key: "approche" },
 ];
 const MOBILE_NAV = [...NAV, { href: "/contact", label: "Contact", key: "contact" }];

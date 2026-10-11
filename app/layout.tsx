@@ -3,7 +3,7 @@ import { Inter, Manrope } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { JsonLd } from "@/components/Sections";
-import { SITE } from "@/lib/content";
+import { HERO_SLIDES, SITE, imgSrc } from "@/lib/content";
 import { SAVED_REVIEWS } from "@/lib/reviews-data";
 import "./globals.css";
 
@@ -42,7 +42,7 @@ const orgLd = {
   description: SITE.description,
   url: SITE.url,
   telephone: "+33 6 71 06 87 16",
-  image: `${SITE.url}/img/projets/villa-cetd/11.webp`,
+  image: `${SITE.url}${imgSrc(HERO_SLIDES[0][0], HERO_SLIDES[0][1])}`,
   logo: `${SITE.url}/logo/volum-logo.png`,
   founder: { "@type": "Person", name: "Jean-Yves Millet", jobTitle: "Architecte DPLG", alumniOf: "École Nationale Supérieure d'Architecture de Montpellier" },
   address: { "@type": "PostalAddress", streetAddress: SITE.address, postalCode: SITE.zip, addressLocality: SITE.city, addressRegion: "Occitanie", addressCountry: "FR" },

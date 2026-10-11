@@ -16,7 +16,7 @@ export default function NotFound() {
         <p className="lead muted">Elle a peut-être été déplacée. Voici quelques pistes pour continuer.</p>
         <div className="actions">
           <Link className="btn" href="/">Retour à l&apos;accueil <Arrow /></Link>
-          <Link className="btn btn--secondary" href="/projets">Voir les réalisations</Link>
+          <Link className="btn btn--secondary" href="/projets">Voir les projets</Link>
         </div>
       </div>
     </section>

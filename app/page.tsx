@@ -4,7 +4,7 @@ import { Arrow } from "@/components/Icons";
 import { ProjectCard } from "@/components/ProjectCard";
 import { ProjectImg } from "@/components/ProjectImg";
 import { ContactSection, Engagements, ExpertiseList, Faq, ReviewsSection, Stats, Steps } from "@/components/Sections";
-import { FEATURED, HERO_SLIDES, PROJECTS, getProject, imgSize, imgSrc } from "@/lib/content";
+import { AGENCE_FIGURE, HERO_SLIDES, PROJECTS, imgAlt, imgSize, imgSrc } from "@/lib/content";
 
 export const revalidate = 86400; // avis Google rafraîchis une fois par jour
 
@@ -63,10 +63,9 @@ export default function Home() {
         <div className="container comp-split comp-split--center">
           <figure style={{ margin: 0 }}>
             <div className="figure-stack">
-              <ProjectImg slug="villa-l" num="14" alt="Chantier de la villa L : pose de la charpente" />
-              <ProjectImg slug="villa-l" num="01" alt="La villa L livrée, à Prades-le-Lez" />
+              {AGENCE_FIGURE.images.map(([slug, num]) => <ProjectImg key={slug + num} slug={slug} num={num} alt={imgAlt(slug, num)} />)}
             </div>
-            <figcaption className="figure-caption">Villa L, Prades-le-Lez : du chantier à la livraison.</figcaption>
+            <figcaption className="figure-caption">{AGENCE_FIGURE.caption}</figcaption>
           </figure>
           <div className="stack">
             <span className="eyebrow">L&apos;agence</span>
@@ -82,20 +81,20 @@ export default function Home() {
         <div className="container" style={{ marginTop: "var(--space-xl)" }}><Stats /></div>
       </section>
 
-      <section className="section section--flush-top" id="realisations" aria-labelledby="real-title">
+      <section className="section section--flush-top" id="projets" aria-labelledby="projets-title">
         <div className="container">
           <div className="section-head">
             <div className="stack">
-              <span className="eyebrow">Réalisations</span>
-              <h2 className="h2" id="real-title">Projets livrés.</h2>
+              <span className="eyebrow">Projets</span>
+              <h2 className="h2" id="projets-title">Du logement au bâtiment d&apos;activité.</h2>
             </div>
-            <p>Maisons contemporaines, extensions, réhabilitations de mas et sièges d&apos;entreprise, dans l&apos;Hérault et le Gard.</p>
+            <p>Maisons, intérieurs, logements collectifs, bureaux, bâtiments industriels et agricoles, et les plans qui les préparent : six dossiers pour découvrir le travail de l&apos;agence.</p>
           </div>
           <div className="projects-grid projects-grid--featured">
-            {FEATURED.map((s) => { const p = getProject(s)!; return <ProjectCard key={s} p={p} />; })}
+            {PROJECTS.map((p) => <ProjectCard key={p.slug} p={p} />)}
           </div>
           <div className="section-foot">
-            <Link className="btn btn--secondary" href="/projets">Voir les {PROJECTS.length} réalisations <Arrow /></Link>
+            <Link className="btn btn--secondary" href="/projets">Voir tous les projets <Arrow /></Link>
           </div>
         </div>
       </section>

@@ -54,7 +54,7 @@ export default function Approche() {
         </div>
       </section>
 
-      <Cta title="Parlons de votre projet." secondary={{ href: "/projets", label: "Voir les réalisations" }} />
+      <Cta title="Parlons de votre projet." secondary={{ href: "/projets", label: "Voir les projets" }} />
     </>
   );
 }

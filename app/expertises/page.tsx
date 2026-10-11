@@ -41,9 +41,9 @@ export default function Expertises() {
               <div className="text">
                 {e.text.map((t) => <p key={t} className="muted">{t}</p>)}
                 <ul className="facts-list">{e.points.map((pt) => <li key={pt}>{pt}</li>)}</ul>
-                <p className="small muted" style={{ marginTop: "var(--space-m)", marginBottom: 0 }}>Exemples de réalisations :</p>
+                <p className="small muted" style={{ marginTop: "var(--space-m)", marginBottom: 0 }}>Voir les projets :</p>
                 <ul className="expertise-refs">
-                  {e.refs.map((s) => { const p = getProject(s)!; return <li key={s}><Link className="link-arrow" href={`/projets/${s}`}>{p.title}, {p.place} <Arrow /></Link></li>; })}
+                  {e.refs.map((s) => { const p = getProject(s)!; return <li key={s}><Link className="link-arrow" href={`/projets/${s}`}>{p.title} <Arrow /></Link></li>; })}
                 </ul>
                 <div className="actions" style={{ marginTop: "var(--space-l)" }}>
                   <Link className="btn" href={`/contact?projet=${e.projet}`}>Parler de mon projet <Arrow /></Link>
@@ -70,7 +70,7 @@ export default function Expertises() {
         </div>
       </section>
 
-      <Cta title="Vous avez un projet de construction, d'extension ou de rénovation ?" secondary={{ href: "/projets", label: "Voir les réalisations" }} />
+      <Cta title="Vous avez un projet de construction, d'extension ou de rénovation ?" secondary={{ href: "/projets", label: "Voir les projets" }} />
     </>
   );
 }

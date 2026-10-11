@@ -19,7 +19,7 @@ export function Footer() {
               <li><Link href="/">Accueil</Link></li>
               <li><Link href="/agence">L&apos;agence</Link></li>
               <li><Link href="/expertises">Expertises</Link></li>
-              <li><Link href="/projets">Réalisations</Link></li>
+              <li><Link href="/projets">Projets</Link></li>
               <li><Link href="/approche">Notre approche</Link></li>
               <li><Link href="/#avis">Avis clients</Link></li>
               <li><Link href="/contact">Contact</Link></li>
