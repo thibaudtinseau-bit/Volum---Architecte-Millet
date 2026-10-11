@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Arrow } from "@/components/Icons";
 import { ProjectImg } from "@/components/ProjectImg";
 import { Breadcrumb, Cta, Stats } from "@/components/Sections";
+import { AGENCE_IMAGES, imgAlt } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "L'agence — Jean-Yves Millet, architecte DPLG à Montarnaud",
@@ -43,13 +44,13 @@ export default function Agence() {
 
       <div className="container">
         <div className="split-media" style={{ aspectRatio: "21 / 9" }}>
-          <ProjectImg slug="villa-cetd" num="06" alt="Villa C&D, Pignan" priority sizes="100vw" />
+          <ProjectImg slug={AGENCE_IMAGES.wide[0]} num={AGENCE_IMAGES.wide[1]} alt={imgAlt(...AGENCE_IMAGES.wide)} priority sizes="100vw" />
         </div>
       </div>
 
       <section className="section" aria-labelledby="portrait-title">
         <div className="container comp-split comp-split--center">
-          <div className="split-media"><ProjectImg slug="villa-l" num="01" alt="Villa L, Prades-le-Lez" sizes="(max-width: 900px) 100vw, 40vw" /></div>
+          <div className="split-media"><ProjectImg slug={AGENCE_IMAGES.portrait[0]} num={AGENCE_IMAGES.portrait[1]} alt={imgAlt(...AGENCE_IMAGES.portrait)} sizes="(max-width: 900px) 100vw, 40vw" /></div>
           <div className="stack">
             <span className="eyebrow">Jean-Yves Millet</span>
             <h2 className="h2" id="portrait-title">Dessiner en sachant comment construire.</h2>

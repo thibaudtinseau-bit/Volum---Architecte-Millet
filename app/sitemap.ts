@@ -17,7 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: "yearly" as const,
       priority: 0.7,
-      images: projectImages(p.slug).slice(0, 10).map(([n]) => `${SITE.url}${imgSrc(p.slug, n)}`),
+      images: projectImages(p.slug).slice(0, 20).map(([n]) => `${SITE.url}${imgSrc(p.slug, n)}`),
     }))
   );
 }

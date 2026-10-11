@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { ProjectsFilter } from "@/components/ProjectsFilter";
+import { ProjectCard } from "@/components/ProjectCard";
 import { Breadcrumb, Cta, JsonLd } from "@/components/Sections";
 import { PROJECTS, SITE } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Réalisations — maisons, extensions, bureaux",
-  description: "Découvrez les réalisations de Volum, Jean-Yves Millet architecte DPLG : villas contemporaines, extensions, réhabilitations et bâtiments tertiaires dans l'Hérault et le Gard.",
+  title: "Projets — logements, tertiaire, industriel, plans",
+  description: "Les projets de Volum, Jean-Yves Millet architecte DPLG : maisons, intérieurs, logements collectifs, bâtiments tertiaires, industriels et agricoles, plans et études, à Montpellier et dans l'Hérault.",
   alternates: { canonical: "/projets" },
 };
 
@@ -14,15 +14,19 @@ export default function Projets() {
     <>
       <section className="page-hero">
         <div className="container">
-          <Breadcrumb items={[["Accueil", "/"], ["Réalisations"]]} />
+          <Breadcrumb items={[["Accueil", "/"], ["Projets"]]} />
           <div className="page-hero-grid">
-            <h1 className="display reveal">Réali&shy;sations.</h1>
-            <p className="lead reveal d1">{PROJECTS.length} projets, de la maison individuelle au siège d&apos;entreprise, pour découvrir l&apos;approche de l&apos;agence — de l&apos;esquisse au chantier.</p>
+            <h1 className="display reveal">Projets.</h1>
+            <p className="lead reveal d1">{PROJECTS.length} dossiers pour parcourir le travail de l&apos;agence, du logement individuel au bâtiment d&apos;activité, et les plans qui les précèdent.</p>
           </div>
         </div>
       </section>
       <section className="section" style={{ paddingTop: 0 }}>
-        <div className="container"><ProjectsFilter /></div>
+        <div className="container">
+          <div className="projects-grid projects-grid--featured">
+            {PROJECTS.map((p) => <ProjectCard key={p.slug} p={p} />)}
+          </div>
+        </div>
       </section>
       <Cta />
       <JsonLd data={{
