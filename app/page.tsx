@@ -4,7 +4,7 @@ import { Arrow } from "@/components/Icons";
 import { ProjectCard } from "@/components/ProjectCard";
 import { ProjectImg } from "@/components/ProjectImg";
 import { ContactSection, Engagements, ExpertiseList, Faq, ReviewsSection, Stats, Steps } from "@/components/Sections";
-import { AGENCE_FIGURE, HERO_SLIDES, PROJECTS, imgSize, imgSrc } from "@/lib/content";
+import { AGENCE_FIGURE, HERO_SLIDES, PROJECTS, imgAlt, imgSize, imgSrc } from "@/lib/content";
 
 export const revalidate = 86400; // avis Google rafraîchis une fois par jour
 
@@ -63,7 +63,7 @@ export default function Home() {
         <div className="container comp-split comp-split--center">
           <figure style={{ margin: 0 }}>
             <div className="figure-stack">
-              {AGENCE_FIGURE.images.map(([slug, num, alt]) => <ProjectImg key={slug + num} slug={slug} num={num} alt={alt} />)}
+              {AGENCE_FIGURE.images.map(([slug, num]) => <ProjectImg key={slug + num} slug={slug} num={num} alt={imgAlt(slug, num)} />)}
             </div>
             <figcaption className="figure-caption">{AGENCE_FIGURE.caption}</figcaption>
           </figure>

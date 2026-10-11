@@ -50,13 +50,88 @@ export type Project = {
 };
 
 export const PROJECTS: Project[] = [
-  // (en cours) les 6 dossiers sont ajoutés dans le commit suivant
+  {
+    slug: "logement-exterieur", title: "Logement extérieur", eyebrow: "Maisons individuelles", contact: "maison",
+    type: "Villas, maisons individuelles, piscines & abords", cover: "01",
+    summary: "Villas et maisons individuelles : façades, piscines et jardins, de la perspective à la maison livrée.",
+    text: [
+      "Villas à toit plat, maisons de plain-pied, volumes en porte-à-faux ou toitures en tuiles : ce dossier réunit des façades et des abords de maisons individuelles. Beaucoup composent avec une pente, des pins ou des oliviers, et prolongent l'intérieur par une terrasse, une piscine ou un jardin sec.",
+      "Croquis, perspectives, insertions dans le site et images d'intention permettent de fixer les volumes, les matières et le rapport au terrain avant le chantier. Les photographies montrent ensuite des maisons terminées : enduits clairs, murets en pierre, gabions plantés et entrées éclairées à la nuit tombée.",
+    ],
+    themes: ["Villas contemporaines", "Piscines & terrasses", "Perspectives", "Images d'intention", "Jardins secs", "Réalisations"],
+  },
+  {
+    slug: "logement-interieur", title: "Logement intérieur", eyebrow: "Intérieurs", contact: "renovation",
+    type: "Séjours, cuisines, chambres, salles d’eau & escaliers", cover: "01",
+    summary: "Séjours en double hauteur, cuisines, chambres et salles d’eau : des intérieurs de maisons pensés autour de la lumière et des matières.",
+    text: [
+      "Ce dossier réunit des intérieurs de maisons individuelles, en perspectives et en photographies : séjours en double hauteur, cuisines ouvertes, chambres et salles d’eau. Les grandes baies font entrer la lumière naturelle ; le bois, le béton et les grands carrelages veinés composent les ambiances.",
+      "Les circulations et les pièces plus singulières reçoivent la même attention : escalier en béton à marches massives, escalier hélicoïdal en métal, jardin intérieur au pied des marches, salle de projection sous un plafond étoilé. Plusieurs vues sont des perspectives ou des images d’intention, qui permettent de se projeter dans les volumes, la lumière et les ambiances.",
+    ],
+    themes: ["Séjours double hauteur", "Cuisines ouvertes", "Salles de bains", "Escaliers", "Perspectives 3D", "Salle de cinéma"],
+  },
+  {
+    slug: "logements-collectifs", title: "Logements collectifs", eyebrow: "Habitat collectif", contact: "tertiaire",
+    type: "Résidences, petits collectifs & réhabilitations", cover: "01",
+    summary: "Résidences et petits collectifs autour de Montpellier, des perspectives d'intention aux bâtiments achevés.",
+    text: [
+      "Du petit collectif de quelques logements à la résidence de quatre ou cinq niveaux, l'agence dessine des immeubles d'habitation autour de Montpellier. Terrasses profondes, balcons plantés, attiques en retrait : les logements s'ouvrent sur des prolongements extérieurs, abrités par des débords et des pergolas.",
+      "La plupart des vues sont des perspectives d'intention, établies avant le chantier : béton brut ou enduit clair, pierre ou bardage bois, chaque immeuble y trouve son écriture. D'autres projets partent d'un bâti ancien : un mas en pierre ouvert sur son jardin, montré lui aussi en images d'intention, et un bâtiment de pierre restauré, prolongé par une aile enduite à balcons et photographié une fois achevé.",
+    ],
+    themes: ["Résidences", "Terrasses plantées", "Perspectives d'intention", "Bâti ancien en pierre", "Réalisations"],
+  },
+  {
+    slug: "tertiaire", title: "Tertiaire", eyebrow: "Bureaux & équipements", contact: "tertiaire",
+    type: "Bureaux, locaux d'activités & équipements", cover: "01",
+    summary: "Bureaux, locaux d'activités et équipements : des bâtiments livrés et des projets présentés en perspectives et plans masses.",
+    text: [
+      "Bureaux, locaux d'activités, équipements : un bâtiment professionnel se lit d'abord depuis la rue. Volumes en porte-à-faux ou posés sur pilotis, panneaux de façade sombres, enduits blancs, bardages métalliques et longues baies en bandeau composent des façades sobres, qui signalent l'entrée et éclairent les espaces de travail. Autour, des jardins secs de lavandes, d'agaves et de graminées accompagnent les parvis et les stationnements.",
+      "Aux réalisations s'ajoutent des projets présentés avant le chantier : une gendarmerie et ses logements, un pôle santé organisé en parcelles privatives, un bâtiment d'activités inséré dans sa rue. Ces perspectives, insertions et plans masses sont des images d'intention ; elles permettent de situer le projet, d'en vérifier l'échelle et d'en discuter les choix.",
+    ],
+    themes: ["Bureaux", "Locaux d'activités", "Porte-à-faux", "Jardins secs", "Perspectives 3D", "Plans masses"],
+  },
+  {
+    slug: "industriel-agricole", title: "Industriel & agricole", eyebrow: "Chais & activité", contact: "tertiaire",
+    type: "Chais, caveaux, bâtiments d'activité & ateliers", cover: "01",
+    summary: "Chais, caveaux, espaces d'accueil et bâtiments d'activité : des volumes de travail pensés pour leur usage et leur paysage.",
+    text: [
+      "Un chai se lit d'abord dans son paysage : volume vitré posé sur un soubassement de pierre, long bardage de bois au milieu des vignes, pignons de bois sombre, façades de pierre ou d'acier patiné. Ce dossier réunit des caves et bâtiments agricoles, un caveau aménagé dans un bâtiment en pierre et des lieux d'accueil, de l'orangerie aux salles de restaurant. Esquisses, images d'intention et photographies de réalisations s'y côtoient.",
+      "Côté activité, les projets vont des locaux modulables avec mezzanines au bâtiment de production à toiture végétalisée et panneaux solaires, jusqu'à l'atelier dont les gaines d'extraction rythment la façade. Les plans accompagnent les perspectives et règlent l'organisation du travail : accueil, quai de chargement, accès poids lourds, éclairage zénithal.",
+    ],
+    themes: ["Chais et caveaux", "Bâtiments agricoles", "Locaux d'activité", "Accueil et restauration", "Perspectives 3D", "Plans"],
+  },
+  {
+    slug: "plans-recherche", title: "Plans & recherche", eyebrow: "Esquisses & permis", contact: "maison",
+    type: "Esquisses, permis de construire & plans d'exécution", cover: "01",
+    summary: "Esquisses, perspectives, plans de permis et détails d'exécution : le travail de conception qui précède chaque chantier.",
+    text: [
+      "Chaque projet commence sur le papier. Ce dossier en rassemble les pièces : esquisses de recherche, plans de masse et de distribution, façades et coupes de principe, jusqu'aux détails d'exécution et aux plans de chantier. Maisons avec piscine, logements, bureaux, locaux d'activité, restaurant, chai ou château à reconvertir : chaque programme suit le même cheminement.",
+      "On y trouve aussi des pistes plus libres, présentées en perspectives et images d'intention : petits hébergements en bois aux murs courbes, terrasses aménagées en toiture, patio, jardin avec piscine. D'une planche à l'autre, il s'agit d'organiser les usages, de dimensionner chaque espace, puis de préciser la mise en œuvre.",
+    ],
+    themes: ["Esquisses", "Plans de distribution", "Permis de construire", "Façades & coupes", "Détails d'exécution", "Perspectives 3D"],
+  },
 ];
 
 /** Diaporama de l'accueil : [dossier, image, légende] */
 export const HERO_SLIDES: [string, string, string][] = [
-
+  ["tertiaire", "05", "Tertiaire — volume sur pilotis"],
+  ["logement-exterieur", "01", "Logement extérieur — villa à toit plat"],
+  ["logements-collectifs", "01", "Logements collectifs — perspective d'un immeuble"],
+  ["industriel-agricole", "11", "Industriel & agricole — bâtiment en pierre"],
+  ["logement-interieur", "01", "Logement intérieur — séjour en double hauteur"],
 ];
+
+/** Images de la page « L'agence » : [dossier, image] */
+export const AGENCE_IMAGES: { wide: [string, string]; portrait: [string, string] } = {
+  wide: ["tertiaire", "05"],
+  portrait: ["logement-exterieur", "03"],
+};
+
+/** Accueil, bloc « L'agence » : deux images superposées et leur légende */
+export const AGENCE_FIGURE: { images: [string, string][]; caption: string } = {
+  images: [["plans-recherche", "16"], ["logement-exterieur", "14"]],
+  caption: "Du plan à la maison : chaque projet se construit d'abord sur le papier.",
+};
 
 export const COMMUNES = [
   "Montpellier", "Montarnaud", "Assas", "Pignan", "Prades-le-Lez", "Saint-Clément-de-Rivière",
@@ -160,8 +235,6 @@ export const BUDGET_STEPS: [string, string][] = [
   ["Un suivi des coûts jusqu'à la réception", "Pendant le chantier, les situations de travaux sont vérifiées et toute modification vous est présentée et chiffrée avant d'être engagée."],
 ];
 
-export const AGENCE_IMAGES = { wide: ["", ""] as [string, string], portrait: ["", ""] as [string, string] };
-export const AGENCE_FIGURE = { images: [] as [string, string, string][], caption: "" };
 /* ---------- Images ---------- */
 /** [numéro, largeur, hauteur, texte alternatif] — généré avec les fichiers de public/img/projets/ */
 type ImgMeta = [string, number, number, string];
