@@ -316,7 +316,8 @@ export const CONTENU_G2: Record<string, VilleContenu> = {
   // https://saintandredesangonis.fr/urbanisme/ (révision générale du PLU approuvée le 12/12/2019, portail CCVH, opération « Faites le mur ») ;
   // https://saintandredesangonis.fr/tourisme/ (castrum épiscopal, filatures, Cambous, Sainte-Brigitte) ;
   // https://www.mrae.developpement-durable.gouv.fr/IMG/pdf/avis_mrae_2019ao63.pdf (ZAC des Hauts du Puech, AOC Terrasses du Larzac, servitude AC1 du pont, PPRI 2007) ;
-  // https://georisques.gouv.fr/api/v1/gaspar/pprn/34DDTM20040027 ; Géoportail de l'urbanisme (PLU en vigueur) ; Base Adresse Nationale
+  // https://georisques.gouv.fr/api/v1/gaspar/pprn/34DDTM20040027 ; Géoportail de l'urbanisme (PLU en vigueur) ; Base Adresse Nationale ;
+  // https://montpellier.fr/sites/default/files/2025-04/20250408ArreteOLD34_DDTM34-2025-04-15800.pdf (arrêté DDTM34-2025-04-15800 du 08/04/2025 : commune à risque fort, art. 1, 3 d.2, 7 et 8)
   "saint-andre-de-sangonis": {
     title: "Architecte à Saint-André-de-Sangonis : maison, extension",
     description: "Architecte à Saint-André-de-Sangonis : maison, extension ou rénovation au centre ancien, avec le PPRI de l'Hérault et les argiles. Parlons de votre projet.",
@@ -361,7 +362,7 @@ export const CONTENU_G2: Record<string, VilleContenu> = {
       ["Hérault, Lergue et PPRI", "Le PPRI de la haute vallée de l'Hérault, secteur sud, approuvé le 11 juin 2007, réglemente les terrains inondables de la commune. Certaines berges du fleuve sont classées en aléa fort, et des inondations liées à l'Hérault, à la Lergue et au Lagamas ont été reconnues en catastrophe naturelle. Nous situons chaque parcelle sur la carte réglementaire avant toute proposition."],
       ["Les abords du pont de Gignac", "Le pont sur l'Hérault, inscrit monument historique en 1950, est situé sur la commune voisine, mais sa servitude de protection s'étend sur les berges de Saint-André, notamment vers l'Aire des Ponts. Dans ce secteur, l'Architecte des Bâtiments de France peut avoir à donner son accord, ce qui allonge l'instruction. Nous l'anticipons dès l'esquisse."],
       ["Argiles et barrage du Salagou", "Les sols sujets au retrait et au gonflement couvrent près de 84 % de la commune, à un niveau moyen ou fort : une étude géotechnique doit donc accompagner la vente de tout terrain constructible, et elle reste conseillée pour une extension. La commune est aussi exposée à l'onde de submersion en cas de rupture du barrage du Salagou, un risque traité par un plan particulier d'intervention."],
-      ["Construire en zone agricole", "Plus de 80 % du territoire est agricole, et la mairie diffuse une information sur la lutte contre la cabanisation : en zone agricole ou naturelle, un abri, un mobil-home ou une construction sans lien avec une exploitation est en principe interdit. Pour un bâtiment agricole, nous justifions le besoin de l'exploitation et soignons son insertion dans la plaine."],
+      ["Zone agricole et débroussaillement", "La mairie informe sur la lutte contre la cabanisation : en zone agricole, un abri ou un mobil-home sans lien avec une exploitation est en principe interdit. L'arrêté préfectoral du 8 avril 2025 classe en outre la commune en risque fort d'incendie : à moins de 200 mètres d'un massif boisé ou de garrigue, il faut débroussailler 50 mètres autour des constructions, cimes des arbres espacées de 3 mètres, et toute la parcelle en zone urbaine. Une maison implantée près de son accès, entourée de plantations peu combustibles, limite cette charge."],
     ],
     quartiers: ["Centre ancien", "Cambous", "Sainte-Brigitte", "Les Hauts du Puech", "Le Peyrou", "Bages", "Granoupiac", "Le Bosquet", "Les Fontanelles"],
     faq: [
