@@ -47,6 +47,16 @@ Voir `.env.example`.
 3. La page `/architecte/{slug}`, le sitemap, le plan du site, la page « Architecte dans l'Hérault » et les liens « communes voisines » se mettent à jour seuls.
 Mettre à jour `VILLES_UPDATED` (`lib/villes/index.ts`) quand les textes changent.
 
+## Signature des visuels
+Les visuels de `public/img/projets/` portent le logo Volum dans un coin (clair sur les photos, sombre sur les plans ;
+coin inférieur droit par défaut, le plus dégagé si celui-ci est chargé). Après l'ajout ou le remplacement d'images :
+```bash
+python3 scripts/signer-images.py            # signe uniquement les nouvelles images (nécessite Pillow)
+python3 scripts/signer-images.py --essai    # aperçu dans /tmp/volum-signature, sans rien modifier
+```
+`scripts/images-signees.json` mémorise les images déjà signées : une image n'est jamais signée deux fois.
+Les originaux non signés restent dans l'historique Git.
+
 ## Mesure des demandes
 À chaque formulaire envoyé, l'événement `generate_lead` est poussé dans le `dataLayer` (paramètres `form_name`, `page_path`, `project_type`, `project_city`) :
 dans Google Tag Manager, un déclencheur « Événement personnalisé » `generate_lead` permet d'en faire une conversion GA4 / Google Ads.
