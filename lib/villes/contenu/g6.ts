@@ -6,6 +6,7 @@ export const CONTENU_G6: Record<string, VilleContenu> = {
   // https://www.schneider-avocats.com/article/approbation-du-plui-climat-de-montpellier-mediterranee-metropole/ ;
   // https://encommun.montpellier.fr/articles/2025-07-17-conseil-de-metropole-du-16-juillet-le-plui-climat-est-adopte ;
   // https://www.geoportail-urbanisme.gouv.fr (DU_243400017, PLUi approuvé)
+  // Submersion marine (absente de risques_gaspar) : sous-risque « Par submersion marine » du PPRI approuvé, fiche Géorisques 34DDTM20130001.
   "lattes": {
     title: "Architecte à Lattes : construire entre Lez et étangs",
     description: "Architecte à Lattes : maison, extension ou rénovation pensées avec le PPRI, les digues du Lez et le PLUi-Climat. Parlons de votre projet.",
@@ -33,7 +34,7 @@ export const CONTENU_G6: Record<string, VilleContenu> = {
       ["PPRI de Lattes, approuvé en 2013", "Approuvé le 6 juin 2013, le PPRI de Lattes couvre les crues du Lez et de la Mosson comme les tempêtes marines. Zones rouges de danger, zones rouges et bleue de précaution, zone Z1 protégée par les digues, bande de sécurité au pied de la digue du Lez : chaque secteur a ses règles. Nous situons la parcelle sur ce zonage avant toute esquisse, puisque la zone fixe le calage des planchers et les surfaces admises."],
       ["PLUi-Climat depuis 2025", "Depuis la fin d'août 2025, c'est le PLUi-Climat, voté en conseil métropolitain le 16 juillet, qui fixe les règles à Lattes en lieu et place de l'ancien PLU communal. Hauteurs, emprise, part de pleine terre et stationnement ont changé sur de nombreuses parcelles : une étude antérieure est à reprendre, et une division de terrain se vérifie sur le nouveau règlement avant l'achat."],
       ["Loi Littoral autour des étangs", "Riveraine des étangs palavasiens, Lattes applique la loi Littoral : bande inconstructible de 100 mètres hors des espaces urbanisés, extension seulement limitée de l'urbanisation dans les espaces proches du rivage, protection des espaces remarquables autour du Méjean. Une parcelle de la plaine agricole ne devient pas constructible par une demande isolée ; nous vérifions sa continuité avec un quartier existant avant d'engager des études."],
-      ["Retrait-gonflement des argiles", "Plus des trois quarts du territoire sont classés en aléa moyen ou fort, et presque toutes les maisons sont concernées. L'étude géotechnique exigée lors de la vente d'un terrain constructible sert de base au dimensionnement des fondations, des chaînages et du drainage. Elle compte davantage encore lorsqu'une extension s'appuie sur une maison ancienne aux fondations peu profondes."],
+      ["Retrait-gonflement des argiles", "Plus des trois quarts du territoire sont classés en aléa moyen ou fort, et presque toutes les maisons sont concernées. L'étude géotechnique exigée lors de la vente d'un terrain constructible sert de base au dimensionnement des fondations, des chaînages et du drainage."],
       ["Abords de l'église Saint-Laurent", "L'abside, l'absidiole et les corbeaux de la façade de l'église Saint-Laurent sont classés monument historique depuis 1913. Dans un rayon de 500 mètres, un projet visible depuis l'édifice ou en même temps que lui doit recevoir l'aval de l'Architecte des Bâtiments de France ; l'instruction s'en trouve prolongée d'un mois. Ce délai est intégré au calendrier dès le départ."],
     ],
     quartiers: ["Lattes-Centre", "Port Ariane", "Boirargues", "Maurin", "La Céreirède", "Les Marestelles", "La Jasse de Maurin", "Bois de Maurin"],
@@ -51,6 +52,7 @@ export const CONTENU_G6: Record<string, VilleContenu> = {
   // (arrêté d'approbation de la révision du 29 juin 2021 et règlement) ; https://www.montpellier-france.com/Prepare-Book/Discoveries/Montpellier-metropole/Perols ;
   // https://www.occitanie.developpement-durable.gouv.fr/IMG/pdf/annexe6_cle244f88-3.pdf (sites classés) ;
   // https://www.schneider-avocats.com/article/approbation-du-plui-climat-de-montpellier-mediterranee-metropole/
+  // Submersion marine (absente de risques_gaspar) : sous-risque « Par submersion marine » du PPRI approuvé, fiche Géorisques 34DDTM20160002.
   "perols": {
     title: "Architecte à Pérols : bâtir entre deux étangs",
     description: "Architecte à Pérols : maison, extension ou rénovation adaptées au PPRI révisé en 2021 et à la cote de 2,40 m NGF. Parlons de votre projet.",
@@ -86,7 +88,7 @@ export const CONTENU_G6: Record<string, VilleContenu> = {
       ["Ma maison est en zone jaune Zpu : puis-je l'agrandir ?", "Oui, cette zone admet les extensions, à condition de caler le plancher créé à 2,40 m NGF au minimum. Si votre maison possède déjà un étage accessible, le règlement permet une extension de 20 m² d'emprise au niveau du rez-de-chaussée existant, sans nouveau logement et avec des batardeaux aux ouvertures basses. Nous mesurons la cote réelle de votre plancher actuel sur un levé, car c'est elle qui oriente la solution."],
       ["Faut-il un permis de construire pour une véranda à Pérols ?", "Tout dépend de sa surface et du total obtenu. Jusqu'à 40 m² en zone urbaine du PLUi, une déclaration préalable, instruite en un mois, suffit, sauf si la maison franchit alors 150 m² de surface de plancher : il faut dans ce cas un permis et un architecte. Au sens du PPRI, une véranda reste une extension ; son plancher obéit aux mêmes règles de cote que le reste de la maison."],
       ["Les cabanes du bord de l'étang peuvent-elles devenir des maisons ?", "Rarement. Ces abris de pêcheurs, dont peu sont d'origine, se trouvent au contact d'un étang protégé, dans des secteurs le plus souvent inondables. En zone rouge, le plan de prévention interdit les changements de destination qui augmentent la vulnérabilité, comme le passage d'un abri à un logement, et la loi Littoral limite toute extension. Une remise en état peut s'envisager ; nous l'étudions au cas par cas, règlement à l'appui."],
-      ["Peut-on construire un étage sur une maison mitoyenne du vieux village ?", "Souvent, si la hauteur fixée par le PLUi le permet et si les murs existants supportent la charge. Une surélévation modifie aussi l'aspect de la rue : alignement des corniches, proportion des fenêtres, teinte de l'enduit sont à soigner. Les murs mitoyens imposent par ailleurs de prévenir les voisins et de traiter les appuis avec soin. Comptez deux mois d'instruction pour le permis d'une maison, à partir du dossier complet."],
+      ["Peut-on construire un étage sur une maison mitoyenne du vieux village ?", "Souvent, si la hauteur fixée par le PLUi le permet et si les murs existants supportent la charge. Une surélévation modifie aussi l'aspect de la rue : alignement des corniches, proportion des fenêtres, teinte de l'enduit sont à soigner. Les murs mitoyens imposent par ailleurs de prévenir les voisins et de traiter les appuis avec soin. Cette vérification préalable fait partie du travail d'un architecte à Pérols ; comptez ensuite deux mois d'instruction pour le permis d'une maison, à partir du dossier complet."],
     ],
     refs: ["logement-exterieur", "logement-interieur", "tertiaire"],
     image: ["logement-exterieur", "20"],
@@ -96,6 +98,7 @@ export const CONTENU_G6: Record<string, VilleContenu> = {
   // https://palavaslesflots.com/utile/securite-et-ppri/ ; https://www.georisques.gouv.fr/donnee-risques/PPR/Fiche-ppr/pprn/34DDTM20160001
   // (arrêté d'approbation de la révision de 2018 et règlement) ; https://palavaslesflots.com/publications/histoire-de-la-redoute-de-ballestras/ ;
   // https://www.occitanie.developpement-durable.gouv.fr/IMG/pdf/annexe6_cle244f88-3.pdf (sites classés)
+  // Submersion marine (absente de risques_gaspar) : sous-risque « Par submersion marine » du PPRI approuvé, fiche Géorisques 34DDTM20160001.
   "palavas-les-flots": {
     title: "Architecte à Palavas-les-Flots : rénover face à la mer",
     description: "Architecte à Palavas-les-Flots : rénovation, surélévation et mise hors d'eau d'un logement selon le PPRI et la loi Littoral. Parlons de votre projet.",
@@ -192,6 +195,7 @@ export const CONTENU_G6: Record<string, VilleContenu> = {
   // https://monumentum.fr/monument-historique/pa00103504/mauguio-ancien-chateau-des-comtes-eveques-de-melgueil-ou-maison-castanier-rey ;
   // https://www.herault.gouv.fr/contenu/telechargement/46444/349357/file/rapport%20mauguio%20def.pdf (PDA, enquête 2023) ;
   // https://www.occitanie.developpement-durable.gouv.fr/IMG/pdf/annexe6_cle244f88-3.pdf (sites classés)
+  // Submersion marine (absente de risques_gaspar) : sous-risque « Par submersion marine » du PPRI approuvé, fiche Géorisques 34DDTM20180001.
   "mauguio": {
     title: "Architecte à Mauguio : maison et extension, jusqu'à Carnon",
     description: "Architecte à Mauguio et Carnon : maison, extension ou rénovation selon le PPRI de 2025, la loi Littoral et le PLU en révision. Parlons de votre projet.",
@@ -227,7 +231,7 @@ export const CONTENU_G6: Record<string, VilleContenu> = {
       ["Que signifie un sursis à statuer sur mon permis à Mauguio ?", "Depuis que le conseil municipal a débattu, en décembre 2024, des orientations générales du futur PLU, la commune peut différer sa décision, pendant deux ans au plus, sur une demande qui compromettrait ou rendrait plus onéreuse l'exécution du futur document. Ce n'est pas un refus, mais un gel. Pour une division ou quelques logements, nous examinons les orientations débattues avant le dépôt afin de limiter ce risque."],
       ["Mon terrain est en zone jaune du PPRI : est-il constructible ?", "La zone jaune de précaution urbaine regroupe des secteurs urbanisés que l'événement marin de référence n'atteint pas, mais que l'élévation du niveau de la mer concernera à terme. Les constructions y restent possibles, hors bâtiments sensibles, avec un premier plancher calé à 2,40 m NGF au minimum, des logements sur vide sanitaire et l'interdiction des remblais. Nous comparons cette cote à l'altitude réelle du terrain avant d'esquisser."],
       ["Peut-on transformer un mas de la plaine en plusieurs logements ?", "Rarement. En zone agricole d'une commune littorale, la loi Littoral et le règlement du PLU limitent la création de logements hors de la ville. En zone inondable, le plan de prévention considère en outre que diviser un logement en plusieurs accroît la vulnérabilité. Une réhabilitation de l'habitation existante ou une extension mesurée sont souvent plus réalistes : nous les étudions avec le règlement de la zone sous les yeux."],
-      ["Combien de temps pour obtenir une autorisation à Mauguio ?", "Le permis d'une maison individuelle est instruit en deux mois, les autres permis en trois mois, une déclaration préalable en un mois. Ces délais s'allongent quand l'Architecte des Bâtiments de France est consulté, ce qui est fréquent dans le centre historique. Il faut y ajouter le temps de conception et, après l'accord, le délai de recours des tiers. Un calendrier réaliste vous est remis dès l'esquisse."],
+      ["Combien de temps pour obtenir une autorisation à Mauguio ?", "Le permis d'une maison individuelle est instruit en deux mois, les autres permis en trois mois, une déclaration préalable en un mois. Ces délais s'allongent quand l'Architecte des Bâtiments de France est consulté, ce qui est fréquent dans le centre historique. Il faut y ajouter le temps de conception et, après l'accord, le délai de recours des tiers. Comme architecte à Mauguio, nous vous remettons un calendrier réaliste dès l'esquisse."],
     ],
     refs: ["logement-exterieur", "tertiaire", "logements-collectifs"],
     image: ["logement-exterieur", "10"],
@@ -239,6 +243,7 @@ export const CONTENU_G6: Record<string, VilleContenu> = {
   // https://www.les-caue-occitanie.fr/sites/default/files/N02-fiche-Vic1-traverse%CC%81e_OK-Blog.pdf ;
   // https://www.georisques.gouv.fr/donnee-risques/PPR/Fiche-ppr/pprn/34DDTM20110031 (arrêté du 25 janvier 2012 et règlement) ;
   // https://www.occitanie.developpement-durable.gouv.fr/IMG/pdf/annexe6_cle244f88-3.pdf (sites classés)
+  // Submersion marine (absente de risques_gaspar) : sous-risque « Par submersion marine » du PPRI approuvé, fiche Géorisques 34DDTM20110031.
   "vic-la-gardiole": {
     title: "Architecte à Vic-la-Gardiole : entre garrigue et étang",
     description: "Architecte à Vic-la-Gardiole : maison, extension ou rénovation selon le PLU révisé en 2026, le PPRI et les sites classés. Parlons de votre projet.",
@@ -284,6 +289,7 @@ export const CONTENU_G6: Record<string, VilleContenu> = {
   // https://www.archipel-thau.com/en/our-local-authorities/mireval/mirevals-must-sees/ ; https://inpn.mnhn.fr/espace/protege/FR3800872 ;
   // https://www.georisques.gouv.fr/donnee-risques/PPR/Fiche-ppr/pprn/34DDTM20110027 (arrêté du 25 janvier 2012 et règlement) ;
   // https://www.occitanie.developpement-durable.gouv.fr/IMG/pdf/annexe6_cle244f88-3.pdf (sites classés) ; https://www.winewithseth.com/winewiki/muscat-de-mireval-aoc/
+  // Submersion marine (absente de risques_gaspar) : sous-risque « Par submersion marine » du PPRI approuvé, fiche Géorisques 34DDTM20110027.
   "mireval": {
     title: "Architecte à Mireval : bâtir au pays du muscat",
     description: "Architecte à Mireval : maison, extension, rénovation ou chai, entre Gardiole, vignes de muscat et étang de Vic. Parlons de votre projet.",
