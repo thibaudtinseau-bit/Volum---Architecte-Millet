@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import { ProjectCard } from "@/components/ProjectCard";
 import { Breadcrumb, Cta, JsonLd } from "@/components/Sections";
 import { PROJECTS, SITE } from "@/lib/content";
 
-export const metadata: Metadata = {
-  title: "Projets — logements, tertiaire, industriel, plans",
-  description: "Les projets de Volum, Jean-Yves Millet architecte DPLG : maisons, intérieurs, logements collectifs, bâtiments tertiaires, industriels et agricoles, plans et études, à Montpellier et dans l'Hérault.",
-  alternates: { canonical: "/projets" },
-};
+export const metadata: Metadata = pageMeta(
+  "/projets",
+  "Projets : logements, tertiaire, industriel, plans",
+  "Les projets de Volum, architecte DPLG : maisons, intérieurs, logements collectifs, bureaux, bâtiments industriels et agricoles, plans et études dans l'Hérault.",
+);
 
 export default function Projets() {
   return (
@@ -21,8 +22,9 @@ export default function Projets() {
           </div>
         </div>
       </section>
-      <section className="section" style={{ paddingTop: 0 }}>
+      <section className="section" style={{ paddingTop: 0 }} aria-labelledby="dossiers-title">
         <div className="container">
+          <h2 className="visually-hidden" id="dossiers-title">Les dossiers de projets</h2>
           <div className="projects-grid projects-grid--featured">
             {PROJECTS.map((p) => <ProjectCard key={p.slug} p={p} />)}
           </div>

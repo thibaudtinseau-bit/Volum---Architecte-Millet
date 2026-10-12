@@ -3,6 +3,7 @@ import { Inter, Manrope } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { JsonLd } from "@/components/Sections";
+import { OG_BASE } from "@/lib/seo";
 import { HERO_SLIDES, SITE, imgSrc } from "@/lib/content";
 import { SAVED_REVIEWS } from "@/lib/reviews-data";
 import "./globals.css";
@@ -12,22 +13,15 @@ const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "600"], variabl
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
-  title: {
-    default: "Volum, architecte à Montpellier et Montarnaud | Construction, extension, rénovation",
-    template: "%s | Volum architecture",
-  },
-  description: SITE.description,
+  title: { default: "Volum, architecte DPLG à Montpellier et Montarnaud", template: "%s | Volum" },
+  description: "Volum, Jean-Yves Millet architecte DPLG à Montarnaud depuis 1999 : maisons, extensions, rénovations et bâtiments professionnels à Montpellier et dans l'Hérault.",
   applicationName: "Volum",
   authors: [{ name: "Jean-Yves Millet" }],
   keywords: ["architecte Montpellier", "architecte DPLG", "architecte Montarnaud", "maison d'architecte Hérault",
     "extension maison", "rénovation mas", "maîtrise d'œuvre", "permis de construire", "Volum", "Jean-Yves Millet"],
-  alternates: { canonical: "/" },
-  openGraph: {
-    type: "website", locale: "fr_FR", siteName: SITE.fullName, url: "/",
-    title: "Volum — La sensibilité de l'architecte, la rigueur du bâtisseur", description: SITE.description,
-  },
+  // chaque page définit son Open Graph complet à partir de ce socle (lib/seo.ts)
+  openGraph: { ...OG_BASE },
   twitter: { card: "summary_large_image" },
-  robots: { index: true, follow: true },
   formatDetection: { telephone: true },
 };
 

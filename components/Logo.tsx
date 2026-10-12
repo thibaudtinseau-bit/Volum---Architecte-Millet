@@ -5,7 +5,7 @@ export function Logo({ tagline = false }: { tagline?: boolean }) {
   if (tagline) {
     return (
       <span className="logo logo--full">
-        <img src="/logo/volum-logo-light.webp" alt="Volum — Jean-Yves Millet architecte DPLG" width={720} height={265} />
+        <img src="/logo/volum-logo-light.webp" alt="Volum — Jean-Yves Millet architecte DPLG" width={720} height={265} loading="lazy" decoding="async" />
       </span>
     );
   }

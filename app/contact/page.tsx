@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import { ContactSection, Zone } from "@/components/Sections";
 
-export const metadata: Metadata = {
-  title: "Contact — parlons de votre projet",
-  description: "Contactez Volum, Jean-Yves Millet architecte DPLG à Montarnaud (34) : construction neuve, extension, rénovation ou projet professionnel à Montpellier et dans l'Hérault. Tél. 06 71 06 87 16.",
-  alternates: { canonical: "/contact" },
-};
+export const metadata: Metadata = pageMeta(
+  "/contact",
+  "Contact : parlons de votre projet",
+  "Contactez Volum, Jean-Yves Millet architecte DPLG à Montarnaud : maison neuve, extension, rénovation ou projet professionnel dans l'Hérault. 06 71 06 87 16.",
+);
 
 export default function Contact() {
   return (

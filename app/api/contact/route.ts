@@ -13,7 +13,7 @@ export const runtime = "nodejs";
 */
 const LABELS: Record<string, string> = {
   nom: "Nom", email: "E-mail", telephone: "Téléphone", type: "Type de projet", commune: "Commune",
-  budget: "Budget travaux", echeance: "Échéance", message: "Message",
+  budget: "Budget travaux", echeance: "Échéance", page: "Page d'origine", message: "Message",
 };
 const TYPES: Record<string, string> = {
   maison: "Maison neuve", extension: "Extension / surélévation", renovation: "Rénovation",
@@ -33,6 +33,7 @@ function render(d: Record<string, string>) {
     ["Commune", esc(d.commune) || "—"],
     ["Budget travaux", esc(d.budget) || "Non précisé"],
     ["Échéance", esc(d.echeance) || "Non précisée"],
+    ["Page d'origine", esc(d.page) || "—"],
   ];
   const html = `<!doctype html><html lang="fr"><body style="margin:0;padding:0;background:#eae7e0;">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#eae7e0;padding:32px 12px;font-family:Helvetica,Arial,sans-serif;color:#242424;">
@@ -66,7 +67,8 @@ function render(d: Record<string, string>) {
     ...Object.entries(LABELS).filter(([k]) => k !== "message").map(([k, l]) => `${l} : ${d[k] || "—"}`),
     "", "Son projet :", d.message,
   ].join("\n");
-  const subject = `Nouvelle demande de projet — ${d.nom}${d.type ? ` (${d.type}${d.commune ? `, ${d.commune}` : ""})` : ""}`;
+  const details = [d.type, d.commune].filter(Boolean).join(", ");
+  const subject = `Nouvelle demande de projet — ${d.nom}${details ? ` (${details})` : ""}`;
   return { html, text, subject };
 }
 

@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import { Arrow } from "@/components/Icons";
 import { Breadcrumb, Cta, Services } from "@/components/Sections";
 import { EXPERTISES, getProject } from "@/lib/content";
 
-export const metadata: Metadata = {
-  title: "Expertises — maison, extension, rénovation, projets professionnels",
-  description: "Construction de maison, extension et surélévation, rénovation de bâti ancien, bureaux et ERP : les expertises de Volum, architecte à Montpellier et dans l'Hérault, de la conception au suivi de chantier.",
-  alternates: { canonical: "/expertises" },
-};
+export const metadata: Metadata = pageMeta(
+  "/expertises",
+  "Expertises : maison, extension, rénovation, bureaux",
+  "Maison, extension, surélévation, rénovation de bâti ancien, bureaux et ERP : les expertises de Volum, architecte dans l'Hérault, de l'esquisse au chantier.",
+);
 
 export default function Expertises() {
   return (
@@ -66,6 +67,7 @@ export default function Expertises() {
           <Services />
           <div className="section-foot">
             <Link className="link-arrow" href="/approche">Voir les étapes d&apos;un projet <Arrow /></Link>
+            <Link className="link-arrow" href="/architecte">Trouver un architecte dans votre commune <Arrow /></Link>
           </div>
         </div>
       </section>
