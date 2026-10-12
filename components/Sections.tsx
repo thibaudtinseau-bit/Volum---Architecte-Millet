@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { BUDGET_STEPS, COMMUNES, ENGAGEMENTS, EXPERTISES, FAQ, SERVICES, SITE, STEPS } from "@/lib/content";
 import { getReviews } from "@/lib/reviews";
+import { VILLES } from "@/lib/villes";
 import { ContactForm } from "./ContactForm";
 import { Arrow, GoogleIcon, Icon } from "./Icons";
 import { MapEmbed } from "./MapEmbed";
@@ -198,7 +199,13 @@ export function Zone({ mineral = false }: { mineral?: boolean }) {
           <span className="eyebrow">Zone d&apos;intervention</span>
           <h2 className="h2" id="zone-title">Montpellier, Montarnaud et l&apos;Hérault.</h2>
           <p className="muted">Installée à Montarnaud, aux portes de Montpellier, l&apos;agence intervient dans l&apos;Hérault et, pour certains projets, dans le Gard.</p>
-          <ul className="communes">{COMMUNES.map((c) => <li key={c}>{c}</li>)}</ul>
+          <ul className="communes">
+            {COMMUNES.map((c) => {
+              const v = VILLES.find((x) => x.nom === c);
+              return <li key={c}>{v ? <Link href={`/architecte/${v.slug}`}>{c}</Link> : c}</li>;
+            })}
+          </ul>
+          <Link className="link-arrow" href="/architecte">Toutes nos communes d&apos;intervention <Arrow /></Link>
           <div className="offices">
             <div className="office"><h3>Agence</h3><p>{SITE.address}<br />{SITE.zip} {SITE.city}</p></div>
             <div className="office"><h3>{SITE.address2Name}</h3><p>{SITE.address2}<br />{SITE.zip2} {SITE.city2}</p></div>

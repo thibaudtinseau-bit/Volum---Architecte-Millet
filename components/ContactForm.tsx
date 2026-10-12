@@ -10,8 +10,10 @@ const TYPES = [
 ];
 
 type Status = { kind: "success" | "error"; msg: React.ReactNode } | null;
+type DataLayerWindow = Window & { dataLayer?: Record<string, unknown>[] };
 
-export function ContactForm() {
+/** `commune` pré-remplit le champ « Commune du projet » (pages « Architecte à … »). */
+export function ContactForm({ commune }: { commune?: string } = {}) {
   const form = useRef<HTMLFormElement>(null);
   const statusRef = useRef<HTMLDivElement>(null);
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -59,9 +61,15 @@ export function ContactForm() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(Object.fromEntries(fd.entries())),
+        // la page d'origine figure dans l'e-mail récapitulatif
+        body: JSON.stringify({ ...Object.fromEntries(fd.entries()), page: window.location.pathname }),
       });
       if (!res.ok) throw new Error(String(res.status));
+      // conversion mesurable dans Google Tag Manager (déclencheur « Événement personnalisé » generate_lead)
+      (window as DataLayerWindow).dataLayer?.push({
+        event: "generate_lead", form_name: "demande_projet", page_path: window.location.pathname,
+        project_type: String(fd.get("type") || ""), project_city: String(fd.get("commune") || ""),
+      });
       form.current?.reset();
       setStatus({ kind: "success", msg: <><strong>Votre message a bien été envoyé.</strong> Merci pour votre intérêt pour VOLUM Architecture.</> });
     } catch {
@@ -95,7 +103,7 @@ export function ContactForm() {
       </div>
       <div className="field">
         <label htmlFor="f-commune">Commune du projet <small>(facultatif)</small></label>
-        <input id="f-commune" name="commune" type="text" autoComplete="address-level2" placeholder="Montpellier, Pignan…" />
+        <input id="f-commune" name="commune" type="text" autoComplete="address-level2" placeholder="Montpellier, Pignan…" defaultValue={commune} />
       </div>
       <fieldset className="field field--full">
         <legend>Type de projet <small>(facultatif)</small></legend>

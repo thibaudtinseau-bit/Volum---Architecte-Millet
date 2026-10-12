@@ -66,6 +66,7 @@ export default function Expertises() {
           <Services />
           <div className="section-foot">
             <Link className="link-arrow" href="/approche">Voir les étapes d&apos;un projet <Arrow /></Link>
+            <Link className="link-arrow" href="/architecte">Trouver un architecte dans votre commune <Arrow /></Link>
           </div>
         </div>
       </section>

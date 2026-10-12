@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { EXPERTISES, SITE } from "@/lib/content";
+import { VILLES_PRINCIPALES, getVille } from "@/lib/villes";
 import { Arrow } from "./Icons";
 import { Logo } from "./Logo";
 
@@ -22,6 +23,7 @@ export function Footer() {
               <li><Link href="/expertises">Expertises</Link></li>
               <li><Link href="/projets">Projets</Link></li>
               <li><Link href="/approche">Notre approche</Link></li>
+              <li><Link href="/architecte">Zones d&apos;intervention</Link></li>
               <li><Link href="/#avis">Avis clients</Link></li>
               <li><Link href="/contact">Contact</Link></li>
             </ul>
@@ -48,11 +50,21 @@ export function Footer() {
             </ul>
           </div>
         </div>
+        <nav className="footer-villes" aria-labelledby="footer-villes">
+          <h2 id="footer-villes">Architecte dans l&apos;Hérault</h2>
+          <ul>
+            {VILLES_PRINCIPALES.map(getVille).filter((v) => v !== undefined).map((v) => (
+              <li key={v.slug}><Link href={`/architecte/${v.slug}`}>Architecte {v.a}</Link></li>
+            ))}
+            <li><Link href="/architecte">Toutes les communes <Arrow /></Link></li>
+          </ul>
+        </nav>
         <div className="footer-bottom">
           <span>© {new Date().getFullYear()} Volum, Jean-Yves Millet, architecte DPLG</span>
           <nav aria-label="Liens légaux">
             <Link href="/mentions-legales">Mentions légales</Link>
             <Link href="/mentions-legales#confidentialite">Confidentialité</Link>
+            <Link href="/plan-du-site">Plan du site</Link>
           </nav>
         </div>
       </div>

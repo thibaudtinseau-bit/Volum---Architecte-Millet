@@ -4,6 +4,7 @@ import { Arrow } from "@/components/Icons";
 import { ProjectCard } from "@/components/ProjectCard";
 import { ProjectImg } from "@/components/ProjectImg";
 import { ContactSection, Engagements, ExpertiseList, Faq, ReviewsSection, Stats, Steps } from "@/components/Sections";
+import { ZoneVilles } from "@/components/Villes";
 import { AGENCE_FIGURE, HERO_SLIDES, PROJECTS, imgAlt, imgSize, imgSrc } from "@/lib/content";
 
 export const revalidate = 86400; // avis Google rafraîchis une fois par jour
@@ -116,9 +117,21 @@ export default function Home() {
         </div>
       </section>
 
-      <ReviewsSection />
-      <Faq mineral />
-      <ContactSection mineral={false} />
+      <section className="section" id="zone" aria-labelledby="zone-title">
+        <div className="container comp-split">
+          <div className="stack sticky">
+            <span className="eyebrow">Zone d&apos;intervention</span>
+            <h2 className="h2" id="zone-title">Architecte à Montpellier et dans tout l&apos;Hérault.</h2>
+            <p className="muted">Depuis Montarnaud, l&apos;agence accompagne les projets de la Métropole de Montpellier au bassin de Thau, du Pic Saint-Loup au Pays de Lunel. Chaque commune a ses règles d&apos;urbanisme, ses risques et ses paysages&nbsp;: retrouvez-les sur sa page.</p>
+            <Link className="link-arrow" href="/architecte">Toutes nos communes d&apos;intervention <Arrow /></Link>
+          </div>
+          <ZoneVilles />
+        </div>
+      </section>
+
+      <ReviewsSection mineral />
+      <Faq />
+      <ContactSection />
     </>
   );
 }
