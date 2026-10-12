@@ -4,6 +4,7 @@ export const CONTENU_G7: Record<string, VilleContenu> = {
   // Sources : https://www.geoportail-urbanisme.gouv.fr/document/by-id/4b6319b82fe5709cce662b99fbd2d163 (PLU de Frontignan-La Peyrade, modification n°1 du 06/02/2025 : règlement, servitudes, PPRI, PPRT, débroussaillement) ;
   // https://fr.wikipedia.org/wiki/Frontignan ; https://fr.wikipedia.org/wiki/Liste_des_monuments_historiques_de_l'Hérault_(A-L) ;
   // https://www.frontignan.fr/contenus/uploads/2017/03/RISQUES_MAJEURS_PPRT_Reglement.pdf ; https://www.smbt.fr/blog/outil/scot/ ; https://www.georisques.gouv.fr
+  // https://montpellier.fr/sites/default/files/2025-04/20250408ArreteOLD34_DDTM34-2025-04-15800.pdf (arrêté préfectoral DDTM34-2025-04-15800 du 08/04/2025, débroussaillement : commune classée en risque fort)
   "frontignan": {
     title: "Architecte à Frontignan : muscat, Gardiole et étangs",
     description: "Frontignan-La Peyrade : maison au contact du vignoble, rénovation au bord du canal, extension à Frontignan-Plage en zone PPRI. Parlons de votre projet.",
@@ -48,6 +49,7 @@ export const CONTENU_G7: Record<string, VilleContenu> = {
   // Sources : https://www.geoportail-urbanisme.gouv.fr/document/by-id/f612ef0bbbd56e033bc88e5f79ab08e5 (PLU de Sète, modification n°5 du 15/12/2025 : règlement des zones UA, 1UB, UD ; annexe 6.1 : site patrimonial remarquable, PPRI, servitudes) ;
   // https://fr.wikipedia.org/wiki/Sète ; https://fr.wikipedia.org/wiki/Liste_des_monuments_historiques_de_l'Hérault_(M-Z) ;
   // https://www.marchesonline.com/appels-offres/avis/revision-generale-du-plan-local-d-urbanisme-de-la-vi/ao-9624959-1 ; https://www.smbt.fr/blog/outil/scot/ ; https://www.georisques.gouv.fr
+  // https://montpellier.fr/sites/default/files/2025-04/20250408ArreteOLD34_DDTM34-2025-04-15800.pdf (arrêté préfectoral DDTM34-2025-04-15800 du 08/04/2025, débroussaillement : commune classée en risque fort)
   "sete": {
     title: "Architecte à Sète : mont Saint-Clair, canaux, quartiers",
     description: "Architecte à Sète : villa du mont Saint-Clair, maison de ville du site patrimonial remarquable, extension en zone PPRI. Parlons de votre projet.",
@@ -175,6 +177,8 @@ export const CONTENU_G7: Record<string, VilleContenu> = {
   // Sources : https://www.geoportail-urbanisme.gouv.fr/document/by-id/45646099dd2ecc1d2396da7dfbd5b8b1 (PLU de Gigean, procédure du 30/06/2025 : règlement, servitudes) ;
   // https://fr.wikipedia.org/wiki/Gigean ; https://fr.wikipedia.org/wiki/Liste_des_monuments_historiques_de_l'Hérault_(A-L) ;
   // https://www.mrae.developpement-durable.gouv.fr/IMG/pdf/2023apo141.pdf (ZAE de l'Embosque) ; https://www.georisques.gouv.fr
+  // https://georisques.gouv.fr/api/v1/gaspar/pprn/34DDTM20120130 (PPRI_Gigean, inondation par crue à montée rapide, approuvé le 25/01/2012) ;
+  // https://montpellier.fr/sites/default/files/2025-04/20250408ArreteOLD34_DDTM34-2025-04-15800.pdf (arrêté préfectoral DDTM34-2025-04-15800 du 08/04/2025, débroussaillement : commune classée en risque fort)
   "gigean": {
     title: "Architecte à Gigean : entre la Gardiole et la plaine",
     description: "Architecte à Gigean : maison sur sols argileux, extension d'un pavillon, rénovation au centre ancien ou local en zone d'activités. Parlons de votre projet.",
@@ -217,6 +221,7 @@ export const CONTENU_G7: Record<string, VilleContenu> = {
 
   // Sources : https://www.geoportail-urbanisme.gouv.fr/document/by-id/f5ab7fc4ed0e1e4725d12bea7649b326 (PLU révisé de Poussan, délibération du 26/06/2026 : règlement, servitudes et PPM du presbytère, PPRI) ;
   // https://fr.wikipedia.org/wiki/Poussan ; https://fr.wikipedia.org/wiki/Liste_des_monuments_historiques_de_l'Hérault_(M-Z) ; https://www.georisques.gouv.fr
+  // https://montpellier.fr/sites/default/files/2025-04/20250408ArreteOLD34_DDTM34-2025-04-15800.pdf (arrêté préfectoral DDTM34-2025-04-15800 du 08/04/2025, débroussaillement : commune classée en risque fort)
   "poussan": {
     title: "Architecte à Poussan : village ancien, garrigue et étang",
     description: "Architecte à Poussan : rénovation au cœur du village protégé, maison en lisière de garrigue, extension avec le PLU révisé en 2026. Parlons de votre projet.",
