@@ -133,7 +133,7 @@ export const CONTENU_G2: Record<string, VilleContenu> = {
   // https://montpellier.fr/sites/default/files/2025-04/20250408ArreteOLD34_DDTM34-2025-04-15800.pdf ;
   // https://data.montpellier3m.fr/dataset/plui-climat-des-communes-de-montpellier-mediterranee-metropole
   "fabregues": {
-    title: "Architecte à Fabrègues : construire au pied de la Gardiole",
+    title: "Architecte à Fabrègues, au pied de la Gardiole",
     description: "Architecte à Fabrègues : maison neuve, extension ou rénovation dans la circulade, en intégrant le PPRI, les argiles et la Gardiole. Parlons de votre projet.",
     accroche: "Une circulade médiévale au pied de la Gardiole, deux cours d'eau, la Mosson et le Coulazou, et des quartiers récents : à Fabrègues, le terrain et l'eau orientent chaque projet.",
     urbanisme: "PLUi-Climat de Montpellier Méditerranée Métropole (2025)",
@@ -241,7 +241,7 @@ export const CONTENU_G2: Record<string, VilleContenu> = {
     ],
     quartiers: ["Centre-village", "L'Ortet", "Les Coteaux", "Le Terral", "La Marquerose", "Mameremonte", "Les Roudères", "Saint-Jean-le-Sec", "La Lauze", "Roque-Fraïsse", "La Condamine", "La Fermaude"],
     faq: [
-      ["Puis-je diviser mon terrain pour construire une seconde maison ?", "C'est possible si le lot issu de la division respecte le règlement du PLUi-Climat : accès, stationnement, emprise au sol, part de pleine terre, distances aux limites. La division elle-même passe par une déclaration préalable ou un permis d'aménager selon les cas. Nous testons d'abord l'implantation d'une maison réaliste sur le futur lot, pour vérifier que l'opération a du sens avant d'engager des frais de géomètre."],
+      ["Puis-je diviser mon terrain à Saint-Jean-de-Védas pour construire une seconde maison ?", "C'est possible si le lot issu de la division respecte le règlement du PLUi-Climat : accès, stationnement, emprise au sol, part de pleine terre, distances aux limites. La division elle-même passe par une déclaration préalable ou un permis d'aménager selon les cas. Nous testons d'abord l'implantation d'une maison réaliste sur le futur lot, pour vérifier que l'opération a du sens avant d'engager des frais de géomètre."],
       ["Ma maison est proche de la Mosson : comment savoir si le PPRI me concerne ?", "La carte réglementaire du PPRI de la basse vallée de la Mosson, consultable en mairie, sur le site de la préfecture et sur Géorisques, indique si la parcelle est dans une zone réglementée. Le règlement associé précise ce qui est permis : extension, annexe, piscine, clôture. Nous croisons cette lecture avec celle du PLUi-Climat avant le premier croquis, car les deux documents s'appliquent ensemble."],
       ["Faut-il un architecte pour une surélévation ?", "Si la surface de plancher totale de la maison dépasse 150 m² après travaux, oui : le recours à un architecte devient obligatoire pour le permis. En dessous, ce n'est pas obligatoire, mais une surélévation engage la structure de la maison, sa toiture et son étanchéité ; un architecte à Saint-Jean-de-Védas vous aide à évaluer ce que la maison peut porter et à obtenir l'autorisation adaptée."],
     ],

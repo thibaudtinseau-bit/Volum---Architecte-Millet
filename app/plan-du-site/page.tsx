@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import { Breadcrumb } from "@/components/Sections";
 import { sitePages, type SitePage } from "@/lib/pages";
 
-export const metadata: Metadata = {
-  title: "Plan du site",
-  description: "Toutes les pages du site Volum, Jean-Yves Millet architecte DPLG : l'agence, les expertises, les projets et les pages « architecte » des communes de l'Hérault.",
-  alternates: { canonical: "/plan-du-site" },
-};
+export const metadata: Metadata = pageMeta(
+  "/plan-du-site",
+  "Plan du site",
+  "Toutes les pages du site Volum, Jean-Yves Millet architecte DPLG : l'agence, les expertises, les projets et les pages « architecte » des communes de l'Hérault.",
+);
 
 export default function PlanDuSite() {
   const groups = sitePages().reduce<Record<string, SitePage[]>>((acc, p) => {

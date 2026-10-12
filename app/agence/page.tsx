@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import { Arrow } from "@/components/Icons";
 import { ProjectImg } from "@/components/ProjectImg";
 import { Breadcrumb, Cta, Stats } from "@/components/Sections";
 import { AGENCE_IMAGES, TIMELINE, imgAlt } from "@/lib/content";
 
-export const metadata: Metadata = {
-  title: "L'agence — Jean-Yves Millet, architecte DPLG à Montarnaud",
-  description: "Volum, l'agence de Jean-Yves Millet, architecte DPLG et titulaire d'un DUT Génie civil, installée à Montarnaud près de Montpellier depuis 1999 : vision, parcours et engagement.",
-  alternates: { canonical: "/agence" },
-};
+export const metadata: Metadata = pageMeta(
+  "/agence",
+  "L'agence : Jean-Yves Millet, architecte à Montarnaud",
+  "Volum, l'agence de Jean-Yves Millet, architecte DPLG et DUT Génie civil, installée à Montarnaud près de Montpellier depuis 1999 : vision, parcours, engagement.",
+);
 
 const PILLARS: [string, string][] = [
   ["La vision", "Un projet part d'un lieu et de ceux qui vont l'habiter. Orientation, lumière, vues, usages : la forme découle de ces données plutôt que d'un style imposé. Éco-conception, technologies nouvelles et façons de vivre orientent chaque réponse."],

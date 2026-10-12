@@ -5,7 +5,14 @@ import { ProjectCard } from "@/components/ProjectCard";
 import { ProjectImg } from "@/components/ProjectImg";
 import { ContactSection, Engagements, ExpertiseList, Faq, ReviewsSection, Stats, Steps } from "@/components/Sections";
 import { ZoneVilles } from "@/components/Villes";
+import type { Metadata } from "next";
 import { AGENCE_FIGURE, HERO_SLIDES, PROJECTS, imgAlt, imgSize, imgSrc } from "@/lib/content";
+import { pageMeta } from "@/lib/seo";
+
+export const metadata: Metadata = {
+  ...pageMeta("/", "Volum, architecte DPLG à Montpellier et Montarnaud", "Volum, Jean-Yves Millet architecte DPLG à Montarnaud depuis 1999 : maisons, extensions, rénovations et bâtiments professionnels à Montpellier et dans l'Hérault."),
+  title: { absolute: "Volum, architecte DPLG à Montpellier et Montarnaud" },
+};
 
 export const revalidate = 86400; // avis Google rafraîchis une fois par jour
 

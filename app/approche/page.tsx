@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import { Arrow } from "@/components/Icons";
 import { Breadcrumb, Budget, Cta, Steps } from "@/components/Sections";
 
-export const metadata: Metadata = {
-  title: "Notre approche — les étapes d'un projet d'architecture",
-  description: "Échanger, concevoir, préparer, accompagner les travaux, finaliser : comment Volum mène un projet de construction ou de rénovation à Montpellier et dans l'Hérault, et comment le budget est suivi.",
-  alternates: { canonical: "/approche" },
-};
+export const metadata: Metadata = pageMeta(
+  "/approche",
+  "Notre approche : les étapes d'un projet d'architecture",
+  "Échanger, concevoir, préparer, suivre les travaux, réceptionner : comment Volum mène un projet de construction ou de rénovation dans l'Hérault, budget compris.",
+);
 
 export default function Approche() {
   return (

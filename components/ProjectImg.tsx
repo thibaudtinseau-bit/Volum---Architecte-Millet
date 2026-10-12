@@ -23,7 +23,8 @@ export function ProjectImg({ slug, num, alt, className, priority, sizes = "(max-
       height={h}
       alt={alt}
       loading={priority ? "eager" : "lazy"}
-      decoding={priority ? "sync" : "async"}
+      fetchPriority={priority ? "high" : undefined}
+      decoding="async"
     />
   );
 }

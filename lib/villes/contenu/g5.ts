@@ -310,7 +310,7 @@ export const CONTENU_G5: Record<string, VilleContenu> = {
   // DDTM 34, « Type et procédure d'urbanisme en cours dans l'Hérault » (élaboration du PLU prescrite le 28/11/2016, approuvée le 04/12/2025) ;
   // https://www.geoportail-urbanisme.gouv.fr (PLU 34272) ; Base adresse nationale (lieux-dits)
   "saint-just": {
-    title: "Architecte à Saint-Just (34) : maison de plaine, extension",
+    title: "Architecte à Saint-Just (34) : maison, extension",
     description: "Architecte à Saint-Just : maison neuve, extension ou rénovation sur un terrain de plaine, avec le nouveau PLU de 2025 et le PPRI de 2010. Parlons-en ensemble.",
     accroche: "Une plaine à quelques mètres au-dessus de la mer, le Dardaillon et ses fossés, un PLU tout juste approuvé : à Saint-Just, une maison se conçoit d'abord avec l'eau et le sol.",
     urbanisme: "PLU communal approuvé le 4 décembre 2025",

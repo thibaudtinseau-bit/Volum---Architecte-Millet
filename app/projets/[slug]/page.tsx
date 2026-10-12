@@ -5,7 +5,8 @@ import { Gallery } from "@/components/Gallery";
 import { Arrow } from "@/components/Icons";
 import { ProjectImg } from "@/components/ProjectImg";
 import { Breadcrumb, Cta, JsonLd } from "@/components/Sections";
-import { PROJECTS, SITE, getProject, imgSrc, projectImages } from "@/lib/content";
+import { PROJECTS, SITE, getProject, imgAlt, imgSize, imgSrc, projectImages } from "@/lib/content";
+import { pageMeta } from "@/lib/seo";
 
 type Params = { params: Promise<{ slug: string }> };
 
@@ -19,13 +20,12 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const { slug } = await params;
   const p = getProject(slug);
   if (!p) return {};
-  const title = `${p.title} — ${p.type}`;
-  return {
-    title,
-    description: `${p.summary} Projets de Volum, Jean-Yves Millet architecte DPLG.`,
-    alternates: { canonical: `/projets/${p.slug}` },
-    openGraph: { title, description: p.summary, images: [{ url: imgSrc(p.slug, p.cover) }] },
-  };
+  const signature = " Volum, architecte DPLG.";
+  const description = p.summary.length + signature.length <= 158 ? p.summary + signature : p.summary;
+  const [width, height] = imgSize(p.slug, p.cover);
+  return pageMeta(`/projets/${p.slug}`, `${p.title} : projets d'architecte`, description, {
+    images: [{ url: imgSrc(p.slug, p.cover), width, height, alt: imgAlt(p.slug, p.cover) || p.title }],
+  });
 }
 
 export default async function ProjectPage({ params }: Params) {

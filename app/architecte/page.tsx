@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import { Breadcrumb, Cta, JsonLd } from "@/components/Sections";
 import { VilleLinks } from "@/components/Villes";
 import { SITE } from "@/lib/content";
 import { SECTEURS, VILLES, villesDuSecteur } from "@/lib/villes";
 
-export const metadata: Metadata = {
-  title: "Architecte dans l'Hérault : Montpellier, Sète, Lunel, Pézenas…",
-  description: "Volum, Jean-Yves Millet architecte DPLG à Montarnaud : construction, extension et rénovation dans plus de 50 communes de l'Hérault. Règles, risques et projets, commune par commune.",
-  alternates: { canonical: "/architecte" },
-};
+export const metadata: Metadata = pageMeta(
+  "/architecte",
+  `Architecte dans l'Hérault : ${VILLES.length} communes d'intervention`,
+  "Volum, architecte DPLG à Montarnaud : construction, extension et rénovation dans 54 communes de l'Hérault. Règles, risques et projets, commune par commune.",
+);
 
 export default function Architecte() {
   return (

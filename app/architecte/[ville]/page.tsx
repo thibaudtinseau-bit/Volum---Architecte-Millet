@@ -8,7 +8,8 @@ import { ProjectImg } from "@/components/ProjectImg";
 import { Breadcrumb, JsonLd, Steps } from "@/components/Sections";
 import { StickyCta } from "@/components/StickyCta";
 import { VilleLinks, distanceLabel } from "@/components/Villes";
-import { EXPERTISES, SITE, getProject, imgAlt, imgSrc } from "@/lib/content";
+import { EXPERTISES, SITE, getProject, imgAlt, imgSize, imgSrc } from "@/lib/content";
+import { OG_BASE } from "@/lib/seo";
 import { VILLES, getSecteur, getVille, voisines } from "@/lib/villes";
 
 type Params = { params: Promise<{ ville: string }> };
@@ -23,14 +24,17 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const v = getVille((await params).ville);
   if (!v) return {};
   const [dossier, num] = v.image;
+  const [width, height] = imgSize(dossier, num);
+  const ogTitle = `Architecte ${v.a} — Volum, Jean-Yves Millet`;
   return {
     title: { absolute: `${v.title} | Volum` },
     description: v.description,
     alternates: { canonical: `/architecte/${v.slug}` },
     openGraph: {
-      type: "website", url: `/architecte/${v.slug}`, title: `Architecte ${v.a} — Volum, Jean-Yves Millet`,
-      description: v.description, images: [{ url: imgSrc(dossier, num) }],
+      ...OG_BASE, url: `/architecte/${v.slug}`, title: ogTitle, description: v.description,
+      images: [{ url: imgSrc(dossier, num), width, height, alt: imgAlt(dossier, num) }],
     },
+    twitter: { card: "summary_large_image", title: ogTitle, description: v.description },
   };
 }
 

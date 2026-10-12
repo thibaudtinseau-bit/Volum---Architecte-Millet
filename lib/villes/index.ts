@@ -93,13 +93,20 @@ export function distanceAgence(v: Pick<Ville, "lat" | "lng">) {
   return Math.round(haversine(SITE.lat, SITE.lng, v.lat, v.lng));
 }
 
-/** Les communes les plus proches (maillage entre pages villes). */
-export function voisines(v: Ville, n = 6) {
+function plusProches(v: Ville, n: number) {
   return VILLES.filter((o) => o.slug !== v.slug)
     .map((o) => ({ o, d: haversine(v.lat, v.lng, o.lat, o.lng) }))
     .sort((a, b) => a.d - b.d)
     .slice(0, n)
     .map(({ o }) => o);
+}
+
+/** Maillage entre pages villes : les communes les plus proches, plus celles qui comptent
+    cette commune parmi leurs plus proches (liens réciproques : aucune commune isolée). */
+export function voisines(v: Ville, n = 6) {
+  const proches = plusProches(v, n);
+  const retour = VILLES.filter((o) => o.slug !== v.slug && !proches.includes(o) && plusProches(o, n).includes(v));
+  return [...proches, ...retour];
 }
 
 /** Communes mises en avant dans le pied de page */

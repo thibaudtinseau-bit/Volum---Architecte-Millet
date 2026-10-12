@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import { Arrow } from "@/components/Icons";
 import { ProjectCard } from "@/components/ProjectCard";
@@ -9,12 +10,12 @@ import { PROJECTS, SITE, TIMELINE } from "@/lib/content";
 const PHOTO = "/img/jean-yves-millet.webp";
 const PHOTO_SM = "/img/jean-yves-millet-sm.webp";
 
-export const metadata: Metadata = {
-  title: "Jean-Yves Millet — architecte DPLG à Montarnaud, près de Montpellier",
-  description: "Jean-Yves Millet, architecte DPLG et titulaire d'un DUT Génie civil, fondateur de Volum à Montarnaud en 1999 : parcours, double compétence architecture et construction, accompagnement des projets jusqu'au chantier.",
-  alternates: { canonical: "/jean-yves-millet" },
-  openGraph: { type: "profile", images: [{ url: PHOTO, width: 1024, height: 1280, alt: "Jean-Yves Millet sur un chantier, plans en main" }] },
-};
+export const metadata: Metadata = pageMeta(
+  "/jean-yves-millet",
+  "Jean-Yves Millet, architecte DPLG à Montarnaud",
+  "Jean-Yves Millet, architecte DPLG et DUT Génie civil, fondateur de Volum à Montarnaud en 1999 : parcours, double compétence architecture et chantier.",
+  { type: "profile", images: [{ url: PHOTO, width: 1024, height: 1280, alt: "Jean-Yves Millet sur un chantier, plans en main" }] },
+);
 
 /** Ce qu'il apporte à un projet : [titre, texte] */
 const APPORTS: [string, string][] = [

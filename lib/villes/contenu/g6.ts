@@ -197,7 +197,7 @@ export const CONTENU_G6: Record<string, VilleContenu> = {
   // https://www.occitanie.developpement-durable.gouv.fr/IMG/pdf/annexe6_cle244f88-3.pdf (sites classés)
   // Submersion marine (absente de risques_gaspar) : sous-risque « Par submersion marine » du PPRI approuvé, fiche Géorisques 34DDTM20180001.
   "mauguio": {
-    title: "Architecte à Mauguio : maison et extension, jusqu'à Carnon",
+    title: "Architecte à Mauguio-Carnon : maison et extension",
     description: "Architecte à Mauguio et Carnon : maison, extension ou rénovation selon le PPRI de 2025, la loi Littoral et le PLU en révision. Parlons de votre projet.",
     accroche: "Du centre historique bâti autour de sa motte aux résidences de Carnon, Mauguio réunit une ville ancienne, une plaine agricole et une station littorale, chacune avec ses règles.",
     urbanisme: "PLU communal (révision générale en cours)",

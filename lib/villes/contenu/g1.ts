@@ -254,7 +254,7 @@ export const CONTENU_G1: Record<string, VilleContenu> = {
   // https://georisques.gouv.fr/api/v1/gaspar/pprn?codeInsee=34202 ; https://www.herault.gouv.fr/index.php/contenu/telechargement/8886/49560/file/rapport_commissaire_enqueteur_zac_pignan.pdf ;
   // https://montpellier.fr/sites/default/files/2025-04/20250408ArreteOLD34_DDTM34-2025-04-15800.pdf ; https://plateforme.adresse.data.gouv.fr/lookup/34202
   "pignan": {
-    title: "Architecte à Pignan : maison, extension et centre médiéval",
+    title: "Architecte à Pignan : maison, extension, centre ancien",
     description: "Architecte à Pignan : rénovation au centre médiéval, extension ou maison neuve à Saint-Estève, avec ABF, PPRI et PPRIF anticipés. Parlons de votre projet.",
     accroche: "Tours médiévales, château de Turenne et abbaye du Vignogoul d'un côté, ruisseaux et garrigue de l'autre : à Pignan, patrimoine protégé et risques naturels encadrent la plupart des projets.",
     urbanisme: "PLUi-Climat de Montpellier Méditerranée Métropole (2025)",
