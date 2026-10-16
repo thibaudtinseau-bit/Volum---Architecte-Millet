@@ -1,7 +1,19 @@
 {
   "rating": 5,
-  "count": 25,
+  "count": 26,
   "reviews": [
+    {
+      "author": "Sylvie T.",
+      "rating": 5,
+      "date": "2026-10-12T08:29:39.740129887Z",
+      "text": "Seule dans mon projet, M. Millet a su me conseiller avec la proposition de plans en 2 esquisses que nous avons remaniées avec succès ! Il m’a recommandé un artisan fiable pour la réalisation de ma verrière. J’ai apprécié l’approche qui allie décoration et praticité, des idées originales mais fonctionnelles qui collent à mon projet un peu atypique. Merci ! 🌈"
+    },
+    {
+      "author": "Isabelle Cohen",
+      "rating": 5,
+      "date": "2026-10-08T17:15:46.954809821Z",
+      "text": "Nous avons fait appel à Jean-Yves Millet pour la conception des plans et le suivi du chantier de notre maison, et nous en sommes vraiment ravis.\nC’est un professionnel très sérieux, à l’écoute et attentif à nos besoins. Il a su nous conseiller, prendre en compte nos envies et nous accompagner tout au long du projet avec beaucoup de professionnalisme et en respectant notre budget.\nAujourd’hui, nous sommes particulièrement heureux dans notre maison. Je pense régulièrement à lui en me disant que nous avons vraiment fait le bon choix en lui confiant notre projet !\nNous le recommandons sans hésitation à tous ceux qui souhaitent être bien accompagnés dans leur projet."
+    },
     {
       "author": "Hélène PHILIPPE",
       "rating": 5,
